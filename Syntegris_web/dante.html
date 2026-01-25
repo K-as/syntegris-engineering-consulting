@@ -18,6 +18,13 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -29,7 +36,7 @@
                             <a href="javascript:void(0)" class="parent-link">Software &raquo;</a>
                             <ul class="nested-menu">
                                 <li><a href="sdc-verifier.html">SDC Verifier</a></li>
-                                <li><a href="dante.html">DANTE</a></li>
+                                <li><a href="dante.html" class="active">DANTE</a></li>
                                 <li><a href="stampack.html">Stampack Express</a></li>
                             </ul>
                         </li>
@@ -51,31 +58,48 @@
     </header>
 
     <section class="page-title">
-        <h1>DANTE Software</h1>
-        <p>Advanced Heat Treatment Simulation</p>
+        <h1>DANTE Solutions</h1>
     </section>
 
     <div class="container">
         <div class="card">
-            <h2>About DANTE</h2>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="DANTE.png" alt="DANTE Logo" style="max-height: 80px;">
+            </div>
+
+            <h2>Heat Treatment Simulation Software</h2>
             <p>DANTE is the premier software for simulating heat treatment processes. It allows engineers to predict residual stress, distortion, and hardness in steel parts.</p>
+            <p>Understanding these factors is crucial for preventing cracking during quenching and ensuring the final component meets design specifications.</p>
             
+            <ul class="feature-list" style="margin-top: 20px;">
+                <li><strong>Phase Transformation:</strong> Accurate prediction of metallurgical phases (Austenite, Martensite, Bainite, etc.).</li>
+                <li><strong>Residual Stress:</strong> Identify areas of high stress that may lead to failure.</li>
+                <li><strong>Distortion Prediction:</strong> Minimize machining allowances by predicting shape changes.</li>
+                <li><strong>Carburizing & Nitriding:</strong> Simulate surface hardening processes.</li>
+            </ul>
         </div>
     </div>
 
     <div class="container">
-            <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
-                <h2 style="color: var(--primary);">Predict Distortion Before It Happens</h2>
-                <p style="max-width: 700px; margin: 10px auto 25px auto;">
-                    Don't rely on trial-and-error for heat treatment. Get a trial license to predict hardness, residual stress, and part distortion accurately.
-                </p>
-                
-                <a href="https://dante-solutions.com/dante-trial-license/" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; margin-right: 10px;">Request Trial License</a>
+        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
+            <h2 style="color: var(--primary);">Predict Distortion Before It Happens</h2>
+            <p style="max-width: 700px; margin: 10px auto 25px auto;">
+                Don't rely on trial-and-error for heat treatment. Get a trial license to predict hardness, residual stress, and part distortion accurately.
+            </p>
+            
+            <a href="https://dante-solutions.com/dante-trial-license/" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; margin-right: 10px;">Request Trial License</a>
 
-                <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; background-color: var(--white); color: var(--primary); border: 2px solid var(--primary);">Consult With Us</a>
-            </div>
+            <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; background-color: var(--white); color: var(--primary); border: 2px solid var(--primary);">Consult With Us</a>
         </div>
+    </div>
 
-    <footer><p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p></footer>
-    </body>
+    <footer>
+        <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
+    </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script src="script.js"></script>
+
+</body>
 </html>

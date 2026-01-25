@@ -18,6 +18,13 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -51,72 +58,80 @@
     </header>
 
     <section class="page-title">
-        <h1>Our Engineering Solutions</h1>
-        <p>Advanced software for simulation and specialized hardware for surface integrity.</p>
+        <h1>Product Catalog</h1>
     </section>
 
     <div class="container">
-            
-            <div class="category-header">
-                <h2>Software Solutions</h2>
-                <p>Authorized distribution and technical implementation of advanced simulation tools.</p>
-            </div>
-
-            <div class="product-grid">
-                <div class="product-card">
-                    <div class="image-box">
-                        <img src="SDC.png" alt="SDC Verifier Logo">
-                    </div>
-                    <h3>SDC Verifier</h3>
-                    <p>Complete structural verification according to global industry standards (Eurocode, AISC, DNV).</p>
-                    <a href="sdc-verifier.html" class="learn-more-btn">View Details</a>
-                </div>
-
-                <div class="product-card">
-                    <div class="image-box">
-                        <img src="DANTE.png" alt="DANTE Solutions Logo">
-                    </div>
-                    <h3>DANTE Solutions</h3>
-                    <p>State-of-the-art heat treatment simulation for predicting distortion, residual stress, and metallurgical phases.</p>
-                    <a href="dante.html" class="learn-more-btn">View Details</a>
-                </div>
-
-                <div class="product-card">
-                    <div class="image-box">
-                        <img src="csm.png" alt="Stampack Express Logo">
-                    </div>
-                    <h3>Stampack Xpress</h3>
-                    <p>Practical sheet metal forming simulation for tool designers and method planners.</p>
-                    <a href="stampack.html" class="learn-more-btn">View Details</a>
-                </div>
-            </div>
-
-            <hr class="section-divider">
-
-            <div class="category-header">
-                <h2>Hardware Solutions</h2>
-                <p>High-performance equipment for structural life extension.</p>
-            </div>
-
-            <div class="feature-card">
-                <div class="feature-content">
-                    <h3>PIT Equipment</h3>
-                    <p class="subtitle">Pneumatic Impact Treatment</p>
-                    <p>A specialized High Frequency Mechanical Impact (HFMI) technology designed to extend fatigue life and treat weld toes significantly. Essential for aging infrastructure and high-stress mechanical components.</p>
-                    <ul class="feature-list">
-                        <li>Increases fatigue strength</li>
-                        <li>Relieves residual tensile stress</li>
-                        <li>Optimized for on-site application</li>
-                    </ul>
-                    <a href="pit-hardware.html" class="learn-more-btn">Explore Hardware</a>
-                </div>
-                <div class="feature-image">
-                    <img src="pit.png" alt="Pneumatic Impact Treatment Equipment">
-                </div>
-            </div>
-
+        
+        <div class="category-header">
+            <h2>Engineering Software</h2>
+            <p>State-of-the-art simulation tools for verification, heat treatment, and forming.</p>
         </div>
 
-    <footer><p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p></footer>
+        <div class="feature-card" style="display: flex; gap: 30px; margin-bottom: 40px; background: white; padding: 30px; border-radius: 8px; box-shadow: var(--shadow);">
+            <div class="feature-content" style="flex: 1;">
+                <h3>SDC Verifier</h3>
+                <p class="subtitle" style="color: var(--accent);">Structural Code Verification</p>
+                <p>Automate your structural checks against standards like AISC, Eurocode 3, API, and DNV. SDC Verifier integrates directly with Ansys, Femap, and Simcenter.</p>
+                <a href="sdc-verifier.html" class="submit-btn" style="padding: 10px 20px; font-size: 0.9rem; width: auto;">View Details</a>
+            </div>
+            <div class="feature-image" style="flex: 1; text-align: center;">
+                <img src="SDC.png" alt="SDC Verifier" style="max-height: 80px;">
+            </div>
+        </div>
+
+        <div class="feature-card" style="display: flex; gap: 30px; margin-bottom: 40px; background: white; padding: 30px; border-radius: 8px; box-shadow: var(--shadow);">
+            <div class="feature-content" style="flex: 1;">
+                <h3>DANTE Solutions</h3>
+                <p class="subtitle" style="color: var(--accent);">Heat Treatment Simulation</p>
+                <p>Predict residual stress, distortion, and metallurgical phases in steel parts during heat treatment processes like quenching and carburizing.</p>
+                <a href="dante.html" class="submit-btn" style="padding: 10px 20px; font-size: 0.9rem; width: auto;">View Details</a>
+            </div>
+            <div class="feature-image" style="flex: 1; text-align: center;">
+                <img src="DANTE.png" alt="DANTE Logo" style="max-height: 80px;">
+            </div>
+        </div>
+
+        <div class="feature-card" style="display: flex; gap: 30px; margin-bottom: 40px; background: white; padding: 30px; border-radius: 8px; box-shadow: var(--shadow);">
+            <div class="feature-content" style="flex: 1;">
+                <h3>Stampack Express</h3>
+                <p class="subtitle" style="color: var(--accent);">Sheet Metal Forming</p>
+                <p>Easy-to-use simulation for stamping and forming processes. Detect cracks, wrinkles, and thinning early in the design phase.</p>
+                <a href="stampack.html" class="submit-btn" style="padding: 10px 20px; font-size: 0.9rem; width: auto;">View Details</a>
+            </div>
+            <div class="feature-image" style="flex: 1; text-align: center;">
+                <img src="csm.png" alt="Stampack Logo" style="max-height: 80px;">
+            </div>
+        </div>
+
+        <hr class="section-divider" style="margin: 60px 0; border: 0; border-top: 1px solid #ddd;">
+
+        <div class="category-header">
+            <h2>Hardware Solutions</h2>
+            <p>High-performance equipment for structural life extension.</p>
+        </div>
+
+        <div class="feature-card" style="display: flex; gap: 30px; margin-bottom: 40px; background: white; padding: 30px; border-radius: 8px; box-shadow: var(--shadow);">
+            <div class="feature-content" style="flex: 1;">
+                <h3>PIT Equipment</h3>
+                <p class="subtitle" style="color: var(--accent);">Pneumatic Impact Treatment</p>
+                <p>A specialized High Frequency Mechanical Impact (HFMI) technology designed to extend fatigue life and treat weld toes significantly.</p>
+                <a href="pit-hardware.html" class="submit-btn" style="padding: 10px 20px; font-size: 0.9rem; width: auto;">Explore Hardware</a>
+            </div>
+            <div class="feature-image" style="flex: 1; text-align: center;">
+                <img src="pit.png" alt="PIT Equipment" style="max-height: 150px;">
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
+    </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

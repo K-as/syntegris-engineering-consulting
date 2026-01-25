@@ -18,6 +18,13 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -30,7 +37,7 @@
                             <ul class="nested-menu">
                                 <li><a href="sdc-verifier.html">SDC Verifier</a></li>
                                 <li><a href="dante.html">DANTE</a></li>
-                                <li><a href="stampack.html">Stampack Express</a></li>
+                                <li><a href="stampack.html" class="active">Stampack Express</a></li>
                             </ul>
                         </li>
                         <li class="nested-dropdown">
@@ -51,22 +58,21 @@
     </header>
 
     <section class="page-title">
-        <h1>Stampack Express</h1>
-        <p>Precise Sheet Metal Forming Simulation</p>
+        <h1>Stampack Xpress</h1>
     </section>
 
     <div class="container">
         <div class="card">
-            <h2>Optimize Your Manufacturing Process</h2>
-            <p>Stampack Express provides a specialized simulation environment for the metal forming industry. It allows tooling designers to predict and solve forming problems before the first tool is built.</p>
-        </div>
-
-        
-
-        <div class="card">
-            <h3>Benefits for Industry</h3>
-            <ul>
-                <li><strong>Predict Defects:</strong> Identify cracks, wrinkles, and thinning early in the design phase.</li>
+            <div style="text-align: center; margin-bottom: 30px;">
+                <img src="csm.png" alt="Stampack Logo" style="max-height: 80px;">
+            </div>
+            
+            <h2>Sheet Metal Forming Simulation</h2>
+            <p>Stampack Xpress is a practical simulation tool designed for toolmakers and method planners. It validates the forming process of sheet metal parts quickly and accurately, without requiring deep FEA expertise.</p>
+            
+            <ul class="feature-list" style="margin-top: 20px;">
+                <li><strong>Cracks & Thinning:</strong> Detect material failure early.</li>
+                <li><strong>Wrinkling Analysis:</strong> Visualize compression zones.</li>
                 <li><strong>Springback Compensation:</strong> Accurate prediction of material elastic recovery.</li>
                 <li><strong>Material Savings:</strong> Optimize blank sizes to reduce scrap and cost.</li>
                 <li><strong>Fast Turnaround:</strong> Easy-to-use interface designed for shop-floor engineers.</li>
@@ -75,18 +81,25 @@
     </div>
 
     <div class="container">
-            <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
-                <h2 style="color: var(--primary);">Forming Simulation Made Simple</h2>
-                <p style="max-width: 700px; margin: 10px auto 25px auto;">
-                    Validate your tool design and stamping process in minutes. Download the latest version to test the capabilities yourself.
-                </p>
-                
-                <a href="https://www.stampack.com/about/downloads.html" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; margin-right: 10px;">Download Trial</a>
+        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
+            <h2 style="color: var(--primary);">Forming Simulation Made Simple</h2>
+            <p style="max-width: 700px; margin: 10px auto 25px auto;">
+                Validate your tool design and stamping process in minutes. Download the latest version to test the capabilities yourself.
+            </p>
+            
+            <a href="https://www.stampack.com/about/downloads.html" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; margin-right: 10px;">Download Trial</a>
 
-                <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; background-color: var(--white); color: var(--primary); border: 2px solid var(--primary);">Get A Quote</a>
-            </div>
+            <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; background-color: var(--white); color: var(--primary); border: 2px solid var(--primary);">Get A Quote</a>
         </div>
+    </div>
 
-    <footer><p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p></footer>
+    <footer>
+        <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
+    </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script src="script.js"></script>
+
 </body>
 </html>

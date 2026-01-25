@@ -18,6 +18,13 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -36,7 +43,7 @@
                         <li class="nested-dropdown">
                             <a href="javascript:void(0)" class="parent-link">Hardware &raquo;</a>
                             <ul class="nested-menu">
-                                <li><a href="pit-hardware.html">PIT Equipment</a></li>
+                                <li><a href="pit-hardware.html" class="active">PIT Equipment</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -51,53 +58,29 @@
     </header>
 
     <section class="page-title">
-        <h1>PIT Equipment</h1>
-        <p>High Frequency Mechanical Impact (HFMI) Technology for Weld Life Extension</p>
+        <h1>PIT Hardware (HFMI)</h1>
     </section>
 
     <div class="container">
-
-        <div class="card">
-            <h2>What is Pneumatic Impact Treatment?</h2>
-            <p>Pneumatic Impact Treatment (PIT) is a cutting-edge <strong>High Frequency Mechanical Impact (HFMI)</strong> method designed to significantly increase the fatigue life of welded structures. By applying high-frequency impulses to the weld toe, PIT modifies the residual stress profile from tensile to compressive.</p>
-            <p style="margin-top: 15px;">This compact, handheld hardware is essential for industries dealing with cyclic loading, such as cranes, bridges, offshore structures, and mining equipment.</p>
-        </div>
-
-        
-
-        <div class="side-by-side-container">
-            
-            <div class="card">
-                <h3 style="color: var(--primary);">Fatigue Life Extension</h3>
-                <p>PIT treatment can extend the fatigue life of welded joints by <strong>5x to 10x</strong> compared to untreated welds. It effectively "resets" the fatigue clock on aging structures.</p>
-            </div>
-
-            <div class="card">
-                <h3 style="color: var(--primary);">Stress Relief</h3>
-                <p>Welding creates harmful tensile residual stresses. PIT introduces beneficial <strong>compressive stresses</strong> into the material surface, preventing crack initiation and propagation.</p>
-            </div>
-
-        </div>
-
-        <div class="feature-card" style="margin-bottom: 40px;">
-            <div class="feature-content">
-                <h3>The PIT System</h3>
-                <p class="subtitle">Portable & Powerful</p>
+        <div class="feature-card" style="display: flex; gap: 30px; align-items: center; background: white; padding: 30px; border-radius: 8px; box-shadow: var(--shadow);">
+            <div class="feature-content" style="flex: 1;">
+                <h3>Pneumatic Impact Treatment (PIT)</h3>
+                <p class="subtitle" style="color: var(--accent); margin-bottom: 15px;">Portable & Powerful</p>
                 <p>The PIT system consists of a control unit and a handheld impact tool. It is designed for mobility, allowing engineers to perform treatments directly on-site, even in difficult-to-reach areas.</p>
                 
-                <ul class="feature-list">
+                <ul class="feature-list" style="margin-top: 20px;">
                     <li><strong>Operating Frequency:</strong> ~90 Hz</li>
                     <li><strong>Power Supply:</strong> Standard Compressed Air (6 bar)</li>
                     <li><strong>Application Speed:</strong> Approx. 30 cm/min</li>
                     <li><strong>Pin Radius:</strong> Optimized for weld geometry (2mm - 4mm)</li>
                 </ul>
             </div>
-            <div class="feature-image">
-                <img src="pit.png" alt="PIT Hardware Tool Kit"> 
+            <div class="feature-image" style="flex: 1; text-align: center;">
+                <img src="pit.png" alt="PIT Hardware Tool Kit" style="max-width: 100%; border-radius: 8px;"> 
             </div>
         </div>
 
-        <div class="card" style="text-align: center; border-top: 4px solid var(--accent);">
+        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
             <h2>Request a Technical Demo</h2>
             <p>Interested in seeing how PIT can extend the lifespan of your assets? Contact us for a technical demonstration or to rent the equipment.</p>
             <br>
@@ -109,6 +92,10 @@
     <footer>
         <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
     </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script src="script.js"></script>
 
 </body>
 </html>

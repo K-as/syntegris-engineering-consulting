@@ -73,8 +73,9 @@
                     <span class="info-icon">📍</span>
                     <div>
                         <strong>Headquarters:</strong><br>
-                        Syntegris Engineering & Consulting<br>
-                        Shah Alam, Selangor, Malaysia
+                        No 24, Jalan Pegaga U12/9B,<br>
+                        40170, Shah Alam,<br>
+                        Selangor, Malaysia
                     </div>
                 </div>
 
@@ -104,7 +105,8 @@
             </div>
 
             <div class="contact-form-box">
-                <form action="#" method="POST"> <div class="form-group">
+                <form action="#" method="POST"> 
+                    <div class="form-group">
                         <label>Your Name</label>
                         <input type="text" class="form-control" placeholder="John Doe" required>
                     </div>
@@ -148,22 +150,9 @@
         <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
     </footer>
 
-    <script>
-        const menuBtn = document.querySelector('.mobile-menu-btn');
-        const navLinks = document.querySelector('.nav-links');
+    <button id="backToTop" title="Go to top">↑</button>
 
-        menuBtn.addEventListener('click', () => {
-            navLinks.classList.toggle('active');
-            menuBtn.classList.toggle('open');
-        });
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                navLinks.classList.remove('active');
-                menuBtn.classList.remove('open');
-            });
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 </html>
