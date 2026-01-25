@@ -1,0 +1,703 @@
+/* SYNTEGRIS ENGINEERING & CONSULTING - FINAL FIXED STYLESHEET */
+
+/* 1. BRAND VARIABLES */
+:root {
+    --primary: #121f3d;
+    --accent: #d4af37;
+    --light: #f8f9fa;
+    --text: #333333;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --header-height: 80px;
+}
+
+/* 2. GENERAL RESET */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif; 
+}
+
+body { 
+    background-color: var(--light); 
+    color: var(--text); 
+    line-height: 1.6; 
+    scroll-behavior: smooth;
+    padding-top: var(--header-height); 
+}
+
+/* 3. FIXED HEADER & NAVIGATION */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 1000;
+}
+
+.navbar {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+    padding: 0 20px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--primary);
+}
+
+.logo-img {
+    height: 50px;
+    margin-right: 15px;
+}
+
+.brand-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-name {
+    font-weight: 800;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+}
+
+.brand-sub {
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    color: var(--accent);
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    height: 100%;
+    align-items: center;
+}
+
+.nav-links li {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    padding: 0 5px; /* Adds a bit of clickable area */
+}
+
+.nav-links a:hover, .nav-links a.active {
+    color: var(--accent);
+}
+
+/* === DESKTOP DROPDOWN MENUS (The Fix) === */
+
+/* Main Dropdown Container */
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%; /* Opens exactly at the bottom of the header */
+    left: 0;
+    background: var(--white);
+    box-shadow: var(--shadow);
+    list-style: none;
+    min-width: 220px;
+    border-top: 3px solid var(--accent);
+    padding: 10px 0;
+    z-index: 1000;
+}
+
+/* Main Dropdown Bridge (Invisible Safe Zone) */
+/* This fills any tiny gap between the navbar and the menu */
+.dropdown-menu::before {
+    content: "";
+    position: absolute;
+    top: -20px; /* Extends invisible area upwards */
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background: transparent;
+}
+
+/* Show Dropdown on Hover */
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu li {
+    width: 100%;
+    display: block; /* Stacks items vertically */
+    height: auto; /* Reset height */
+    padding: 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.dropdown-menu a:hover {
+    background: var(--light);
+}
+
+/* === NESTED DROPDOWN (Side Flyout) === */
+.nested-dropdown {
+    position: relative;
+}
+
+.nested-menu {
+    display: none;
+    position: absolute;
+    left: 100%; /* Push to the right */
+    top: -5px;  /* Align slightly higher to cover gap */
+    background: var(--white);
+    box-shadow: var(--shadow);
+    min-width: 220px;
+    border-top: 3px solid var(--accent);
+    list-style: none;
+    padding: 10px 0;
+    z-index: 1001;
+    margin-left: -2px; /* Pull back slightly to overlap parent */
+}
+
+/* Nested Menu Bridge (Invisible Safe Zone) */
+/* This ensures mouse doesn't "fall" between the parent and the submenu */
+.nested-menu::before {
+    content: "";
+    position: absolute;
+    right: 100%; /* To the left of the submenu */
+    top: 0;
+    height: 100%;
+    width: 20px; /* Wide invisible bridge */
+    background: transparent;
+}
+
+/* Show Nested Menu on Hover */
+.nested-dropdown:hover .nested-menu {
+    display: block;
+}
+
+/* 4. HERO SECTION */
+.home-hero {
+    /* Updated image name */
+    background: linear-gradient(rgba(18, 31, 61, 0.85), rgba(18, 31, 61, 0.85)), url('engineering-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    height: 85vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+    padding: 20px;
+}
+
+.home-hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    font-weight: 800;
+}
+
+.home-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 30px;
+    opacity: 0.9;
+}
+
+.submit-btn {
+    display: inline-block;
+    background: var(--accent);
+    color: var(--primary);
+    padding: 12px 30px;
+    border-radius: 5px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: transform 0.3s;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(212, 175, 55, 0.4);
+}
+
+/* 5. LAYOUT UTILITIES */
+.container {
+    max-width: 1200px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+.card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    border-top: 4px solid transparent;
+    transition: transform 0.3s;
+}
+
+.card:hover {
+    border-color: var(--accent);
+    transform: translateY(-5px);
+}
+
+/* 6. FEATURES GRID */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.feature-box {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    text-align: center;
+    transition: 0.3s;
+}
+
+.feature-box:hover { transform: translateY(-5px); }
+
+.feature-icon {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.feature-box h3 {
+    margin-bottom: 15px;
+    color: var(--primary);
+}
+
+/* 7. STATS STRIP */
+.stats-container {
+    background: var(--primary);
+    color: var(--white);
+    padding: 60px 0;
+    margin: 80px 0;
+}
+
+.stat-grid {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    text-align: center;
+    gap: 20px;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 10px;
+}
+
+/* 8. PARTNER LOGOS */
+.logo-strip {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 40px;
+    opacity: 0.8;
+}
+
+.logo-strip img {
+    height: 50px;
+    filter: grayscale(100%);
+    transition: 0.3s;
+}
+
+.logo-strip img:hover {
+    filter: grayscale(0%);
+    transform: scale(1.1);
+}
+
+/* 9. FOOTER */
+footer {
+    background: #0b1324;
+    color: #888;
+    text-align: center;
+    padding: 40px 20px;
+    margin-top: 80px;
+    font-size: 0.9rem;
+}
+
+/* BACK TO TOP BUTTON */
+#backToTop {
+    display: none;
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: var(--accent);
+    color: var(--primary);
+    cursor: pointer;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+#backToTop:hover {
+    background-color: var(--white);
+    transform: translateY(-3px);
+}
+
+/* === PAGE TITLES === */
+.page-title {
+    background: var(--primary);
+    color: var(--white);
+    text-align: center;
+    padding: 60px 20px;
+    margin-bottom: 40px;
+}
+
+.page-title h1 {
+    font-size: 2.5rem;
+    color: var(--accent);
+}
+
+/* === SIDE BY SIDE LAYOUT === */
+.side-by-side-container {
+    display: flex;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.side-by-side-container .card { flex: 1; }
+
+/* === TEAM / ORG CHART STYLES === */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); 
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background: var(--white);
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-top: 3px solid var(--accent);
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover { transform: translateY(-5px); }
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; 
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--light);
+}
+
+.team-role {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.team-bio {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Motto / Quote Section */
+.motto-box {
+    background-color: #f8f9fa; 
+    border-left: 5px solid var(--accent); 
+    padding: 30px;
+    margin: 40px 0;
+    font-style: italic;
+    font-family: 'Georgia', serif; 
+    color: #555;
+    position: relative;
+}
+
+.motto-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: block;
+    font-style: normal; 
+}
+
+/* =========================
+   HERO BUTTONS UPGRADE 
+   ========================= */
+.btn-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px; 
+    transition: all 0.3s ease; 
+    position: relative;
+    z-index: 10;
+}
+
+/* 1. Primary Button (Gold) */
+.btn-gold {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 2px solid var(--accent);
+    box-shadow: 0 5px 15px rgba(212, 160, 23, 0.4); 
+}
+
+.btn-gold:hover {
+    background-color: transparent; 
+    color: var(--white);
+    transform: translateY(-5px); 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* 2. Secondary Button (Transparent/White) */
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary); 
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+}
+
+/* =========================
+   CONTACT PAGE STYLES 
+   ========================= */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info-box {
+    background: var(--primary);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info-box h3 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.contact-form-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--accent);
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+textarea.form-control {
+    resize: vertical;
+    height: 150px;
+}
+
+.map-container {
+    margin-top: 50px;
+    width: 100%;
+    height: 400px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* =========================================
+   10. MOBILE RESPONSIVENESS (ACCORDION STYLE)
+   ========================================= */
+
+/* Hide the hamburger button on Desktop */
+.mobile-menu-btn {
+    display: none;
+}
+
+@media (max-width: 900px) {
+    
+    /* 1. Show the Hamburger Button */
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+        background: transparent;
+        border: none;
+        cursor: pointer;
+        z-index: 2001; 
+    }
+
+    .mobile-menu-btn span {
+        display: block;
+        width: 25px;
+        height: 3px;
+        background-color: var(--primary);
+        margin: 5px 0;
+        transition: 0.4s;
+    }
+
+    .mobile-menu-btn.open span:nth-child(1) { transform: rotate(-45deg) translate(-5px, 6px); }
+    .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
+    .mobile-menu-btn.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
+
+    /* 2. The Menu Drawer */
+    .nav-links {
+        display: flex; 
+        position: fixed;
+        right: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        width: 70%;
+        transform: translateX(100%); 
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding-top: 50px;
+        gap: 0; 
+        overflow-y: auto; 
+    }
+
+    .nav-links.active { transform: translateX(0%); }
+    
+    .nav-links li { 
+        width: 100%; 
+        text-align: center;
+        margin: 0;
+        display: block; /* Ensures mobile stack */
+        height: auto;
+    }
+
+    .nav-links > li > a {
+        display: block;
+        padding: 15px 0;
+        width: 100%;
+    }
+
+    /* === MOBILE DROPDOWNS: NO FLYOUTS === */
+    /* Forces menus to open downward (accordion) on mobile */
+    .dropdown-menu, .nested-menu {
+        position: static; 
+        width: 100%;
+        box-shadow: none;
+        border-top: none;
+        display: none; /* Hidden by default */
+        float: none;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* Remove the bridge on mobile since we stack */
+    .dropdown-menu::before, .nested-menu::before {
+        display: none;
+    }
+
+    .dropdown-menu { background-color: #f4f4f4; }
+    .nested-menu { background-color: #e9e9e9; }
+
+    /* Open when interacting */
+    .dropdown:hover .dropdown-menu { display: block; }
+    .nested-dropdown:hover .nested-menu { display: block; }
+
+    /* Link styles */
+    .dropdown-menu a { padding: 15px 0; font-size: 0.9rem; }
+    .nested-menu a { padding: 12px 0; font-size: 0.85rem; color: #555; }
+
+    /* General Mobile Layout Adjustments */
+    .contact-wrapper, .side-by-side-container { flex-direction: column; }
+    .home-hero h1 { font-size: 2.5rem; }
+    .stat-grid { grid-template-columns: 1fr 1fr; }
+}
