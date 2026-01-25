@@ -18,10 +18,16 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                
                 <li class="dropdown">
                     <a href="products.html" class="dropbtn">Products</a>
                     <ul class="dropdown-menu">
@@ -41,7 +47,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li><a href="services.html">Services</a></li>
                 <li><a href="consultant.html">Consultant</a></li>
                 <li><a href="news.html">News</a></li>
@@ -51,72 +56,114 @@
     </header>
 
     <section class="page-title">
-        <h1>Connect With Our Experts</h1>
-        <p>Expert technical support and software consultation across Malaysia.</p>
+        <h1>Get in Touch</h1>
     </section>
 
     <div class="container">
+        
         <div class="contact-wrapper">
             
-            <div class="contact-card">
-                <div class="form-header">
-                    <h2>INQUIRY FORM</h2>
-                    <p>Please fill out the form below and our lead consultant will reach out to you within 24 hours.</p>
+            <div class="contact-info-box">
+                <h3>Contact Information</h3>
+                <p style="margin-bottom: 30px; opacity: 0.9;">
+                    Have a technical question or need a quote for simulation software? Reach out to our engineering team directly.
+                </p>
+
+                <div class="info-item">
+                    <span class="info-icon">📍</span>
+                    <div>
+                        <strong>Headquarters:</strong><br>
+                        Syntegris Engineering & Consulting<br>
+                        Shah Alam, Selangor, Malaysia
+                    </div>
                 </div>
 
-                <form action="https://formspree.io/f/haikalazhar24@gmail.com" method="POST" class="formal-form">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Full Name</label>
-                            <input type="text" id="name" name="name" placeholder="Your Name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Contact Number</label>
-                            <input type="tel" id="phone" name="phone" placeholder="+60 12-345 6789" required>
-                        </div>
+                <div class="info-item">
+                    <span class="info-icon">📞</span>
+                    <div>
+                        <strong>Phone / WhatsApp:</strong><br>
+                        <a href="tel:+60123456789" style="color: var(--accent); text-decoration: none;">+60 12-345 6789</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-icon">✉️</span>
+                    <div>
+                        <strong>Email:</strong><br>
+                        <a href="mailto:info@syntegris.com" style="color: var(--accent); text-decoration: none;">info@syntegris.com</a>
+                    </div>
+                </div>
+
+                <div class="info-item">
+                    <span class="info-icon">🕒</span>
+                    <div>
+                        <strong>Business Hours:</strong><br>
+                        Mon - Fri: 9:00 AM - 6:00 PM
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact-form-box">
+                <form action="#" method="POST"> <div class="form-group">
+                        <label>Your Name</label>
+                        <input type="text" class="form-control" placeholder="John Doe" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="email">Corporate Email</label>
-                        <input type="email" id="email" name="_replyto" placeholder="name@company.com" required>
+                        <label>Email Address</label>
+                        <input type="email" class="form-control" placeholder="john@company.com" required>
                     </div>
 
                     <div class="form-group">
-                        <label for="message">Detailed Query</label>
-                        <textarea id="message" name="message" rows="6" placeholder="Please describe your technical requirements (SDC Verifier, DANTE, or Stampack)..." required></textarea>
+                        <label>Subject</label>
+                        <select class="form-control">
+                            <option>General Inquiry</option>
+                            <option>Software Quotation (SDC/Dante/Stampack)</option>
+                            <option>PIT Hardware Inquiry</option>
+                            <option>Engineering Consulting Service</option>
+                        </select>
                     </div>
 
-                    <button type="submit" class="submit-btn">Send Official Inquiry</button>
+                    <div class="form-group">
+                        <label>Message</label>
+                        <textarea class="form-control" placeholder="Tell us about your project requirements..."></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn" style="width: 100%;">Send Message</button>
                 </form>
             </div>
 
-            <div class="contact-info-panel">
-                <div class="info-block">
-                    <h3>CONTACT US</h3>
-                    <p><strong>Email:</strong><br>haikalazhar24@gmail.com</p>
-                    <br>
-                    <p><strong>Operating Hours:</strong><br>Mon - Fri | 9:00 AM - 6:00 PM</p>
-                    <br>
-                    <p><strong>Location:</strong><br>
-                        No 24, Jalan Pegaga U12/9B,<br>
-                        40170, Shah Alam,<br>
-                        Selangor, Malaysia
-                    </p>
-                </div>
-
-                <div class="card" style="border-top: 4px solid var(--accent); padding: 20px; margin-top: 0;">
-                    <p style="font-size: 0.85rem; color: #666; margin: 0;">
-                        <em>Your data is handled securely and will only be used for official communication regarding your engineering inquiry.</em>
-                    </p>
-                </div>
-            </div>
-
         </div>
+
+        <div class="map-container">
+            <iframe 
+                src="https://maps.google.com/maps?q=No+24,+Jalan+Pegaga+U12/9B,+40170,+Shah+Alam,+Selangor,+Malaysia&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" height="100%" frameborder="0" style="border:0;" allowfullscreen="" loading="lazy">
+            </iframe>
+        </div>
+
     </div>
 
     <footer>
         <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
     </footer>
+
+    <script>
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        });
+
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('open');
+            });
+        });
+    </script>
 
 </body>
 </html>
