@@ -714,3 +714,189 @@ textarea.form-control {
     .home-hero h1 { font-size: 2.2rem; }
     .stat-grid { grid-template-columns: 1fr 1fr; }
 }
+
+.card p, .team-bio {
+    text-align: justify;
+    text-justify: inter-word; /* Makes the spacing between words look more natural */
+    line-height: 1.6;        /* Improves readability */
+}
+
+.news-container {
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.news-card {
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    border-left: 5px solid #007bff; /* Accent color */
+}
+
+.news-date {
+    font-size: 0.85rem;
+    color: #888;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.news-text {
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.read-more-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: background 0.3s ease;
+}
+
+.read-more-btn:hover {
+    background: #0056b3;
+}
+
+/* News Container Layout */
+.news-container {
+    max-width: 850px;
+    margin: 40px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 30px; /* Space between news cards */
+}
+
+/* The Card */
+.news-card {
+    background: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-top: 4px solid #007bff;
+}
+
+/* Media Handling (Images & Videos) */
+.news-media {
+    margin: 15px 0;
+    width: 100%;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.news-media img, 
+.news-media video {
+    width: 100%;       /* Makes media responsive */
+    height: auto;      /* Maintains aspect ratio */
+    display: block;
+}
+
+.news-date {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.news-text {
+    line-height: 1.7;
+    color: #444;
+}
+
+.read-more-btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    margin-top: 10px;
+}
+
+.read-more-btn:hover {
+    background: #0056b3;
+}
+
+body {
+    background-color: #f0f2f5; /* Light industrial gray */
+    color: #333;
+}
+
+.card, .news-card {
+    background-color: #ffffff; /* Contrast! */
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.hero-branding {
+    display: flex;
+    flex-direction: column; /* Stacks logo on top of text */
+    align-items: center;
+    margin-bottom: 20px;    /* Space between logo and the main title */
+}
+
+.hero-logo {
+    width: 300px;            /* Adjust size to your preference */
+    height: auto;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3)); /* Makes logo "pop" against background */
+}
+
+.hero-company-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    letter-spacing: 4px;    /* Gives it a premium, spaced-out look */
+    color: #ffffff;
+    text-transform: uppercase;
+    opacity: 0.9;
+}
+
+/* Ensure the main title isn't too crowded */
+.home-hero h1 {
+    margin-top: 0;
+    line-height: 1.2;
+}
+
+.hero-branding {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 40px; /* Space before the main title */
+}
+
+.brand-display {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-top: 2px solid rgba(255, 255, 255, 0.3); /* Thin line above */
+    border-bottom: 2px solid rgba(255, 255, 255, 0.3); /* Thin line below */
+    padding: 15px 0;
+}
+
+.main-brand {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: #ffffff;
+    letter-spacing: 12px; /* Very wide spacing for a premium feel */
+    line-height: 1;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+}
+
+.sub-brand {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: var(--accent); /* Uses your brand accent color */
+    letter-spacing: 5px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+
+/* Adjust the H1 to sit nicely below this text logo */
+.home-hero h1 {
+    margin-top: 10px;
+    font-size: 3.5rem;
+}

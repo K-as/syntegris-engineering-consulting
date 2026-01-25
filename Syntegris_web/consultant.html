@@ -3,9 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CONSULTING | SYNTEGRIS</title>
+    <title>ENGINEERING CONSULTING | SYNTEGRIS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === INTERNAL STYLES FOR CONSULTANT PAGE === */
+        
+        /* Service Grid */
+        .consulting-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .consulting-item {
+            background: #fff;
+            padding: 40px 30px;
+            border-top: 4px solid var(--primary); /* distinct top border */
+            border-radius: 4px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .consulting-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+        }
+
+        .consulting-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            display: block;
+            color: var(--accent);
+        }
+
+        /* === NEW WORKFLOW SECTION STYLES === */
+        .workflow-wrapper {
+            position: relative;
+            padding: 20px 0;
+        }
+
+        /* The connecting line behind the steps (Desktop only) */
+        .workflow-line {
+            position: absolute;
+            top: 40px;
+            left: 10%;
+            right: 10%;
+            height: 2px;
+            background: #e0e0e0;
+            z-index: 0;
+            display: none; /* Hidden on mobile */
+        }
+
+        @media (min-width: 900px) {
+            .workflow-line { display: block; }
+        }
+
+        .workflow-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 900px) {
+            .workflow-grid {
+                grid-template-columns: repeat(4, 1fr);
+                gap: 20px;
+            }
+        }
+
+        .process-step {
+            background: #fff;
+            padding: 30px 20px;
+            text-align: center;
+            border: 1px solid #eee;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .process-step:hover {
+            border-color: var(--accent);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        }
+
+        .process-number {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: var(--white);
+            border-radius: 50%;
+            font-weight: bold;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+            border: 4px solid #fff; /* White ring to separate from line */
+            box-shadow: 0 0 0 2px var(--primary); /* Outer ring */
+        }
+
+        .deliverable-tag {
+            display: inline-block;
+            margin-top: 15px;
+            padding: 5px 10px;
+            background: #f0f4ff;
+            color: var(--primary);
+            font-size: 0.75rem;
+            font-weight: 600;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,15 +132,12 @@
             </a>
 
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                
                 <li class="dropdown">
                     <a href="products.html" class="dropbtn">Products</a>
                     <ul class="dropdown-menu">
@@ -48,7 +157,6 @@
                         </li>
                     </ul>
                 </li>
-
                 <li><a href="services.html">Services</a></li>
                 <li><a href="consultant.html" class="active">Consultant</a></li>
                 <li><a href="news.html">News</a></li>
@@ -59,38 +167,133 @@
 
     <section class="page-title">
         <h1>Engineering Consultancy</h1>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 10px; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
+            Bridging the gap between theoretical simulation and practical industrial application.
+        </p>
     </section>
 
     <div class="container">
         
-        <div class="card">
-            <h2>Structural Integrity & Verification</h2>
-            <p>Our core expertise lies in verifying complex structures against international codes such as Eurocode 3, AISC, DNV, and API. We help clients ensure their designs are safe, compliant, and optimized for weight and cost.</p>
+        <div style="text-align: center; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto;">
+            <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 20px;">Strategic Technical Advisory</h2>
+            <p style="color: #555; font-size: 1.05rem;">
+                Syntegris provides high-level engineering consulting for heavy industries. Our expertise lies in validating designs against international codes, predicting manufacturing defects before they occur, and optimizing structural integrity.
+            </p>
         </div>
 
-        <div class="side-by-side-container">
-            <div class="card">
-                <h3>FEA & Simulation</h3>
-                <p>We provide advanced Finite Element Analysis (FEA) services, ranging from static stress analysis to dynamic fatigue assessment. Our team uses industry-leading software to simulate real-world conditions.</p>
+        <div class="consulting-grid">
+            
+            <div class="consulting-item">
+                <span class="consulting-icon">📐</span>
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Advanced FEA & Simulation</h3>
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
+                    High-fidelity Finite Element Analysis (FEA) to predict structural behavior under complex loading conditions.
+                </p>
+                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
+                    <li>Static & Dynamic Stress Analysis</li>
+                    <li>Fatigue Life Prediction</li>
+                    <li>Buckling & Stability Checks</li>
+                </ul>
             </div>
 
-            <div class="card">
-                <h3>Heat Treatment Strategy</h3>
-                <p>Consulting on welding and heat treatment processes using DANTE simulation. We assist in predicting hardness, residual stress, and distortion to optimize your manufacturing cycle before the first part is even produced.</p>
+            <div class="consulting-item">
+                <span class="consulting-icon">🔥</span>
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Heat Treatment Strategy</h3>
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
+                    Using DANTE simulation to optimize thermal cycles, controlling hardness, residual stress, and distortion.
+                </p>
+                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
+                    <li>Quenching & Tempering Optimization</li>
+                    <li>Carburizing Profile Prediction</li>
+                    <li>Distortion Mitigation Strategies</li>
+                </ul>
+            </div>
+
+            <div class="consulting-item">
+                <span class="consulting-icon">⚖️</span>
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Code Compliance Verification</h3>
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
+                    Ensuring designs meet strict requirements of international engineering standards and certification bodies.
+                </p>
+                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
+                    <li>Eurocode 3 (Steel Structures)</li>
+                    <li>DNV & API (Offshore/Marine)</li>
+                    <li>AISC 360 & ASME</li>
+                </ul>
+            </div>
+
+            <div class="consulting-item">
+                <span class="consulting-icon">⚙️</span>
+                <h3 style="color: var(--primary); margin-bottom: 15px;">Manufacturing & WAAM</h3>
+                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
+                    Advisory on advanced manufacturing techniques, specifically Wire Arc Additive Manufacturing (WAAM).
+                </p>
+                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
+                    <li>Deposition Path Planning</li>
+                    <li>Thermal Management in 3D Printing</li>
+                    <li>Material Selection & Testing</li>
+                </ul>
+            </div>
+
+        </div>
+
+        <div class="card" style="background: var(--light); border: none; padding: 60px 40px;">
+            <div style="text-align: center; margin-bottom: 50px;">
+                <h2 style="color: var(--primary);">Our Engineering Workflow</h2>
+                <p>A rigorous, systematic approach to solving complex technical challenges.</p>
+            </div>
+            
+            <div class="workflow-wrapper">
+                <div class="workflow-line"></div>
+
+                <div class="workflow-grid">
+                    
+                    <div class="process-step">
+                        <span class="process-number">01</span>
+                        <h4 style="margin-bottom: 10px;">Problem Definition</h4>
+                        <p style="font-size: 0.9rem; color: #666;">
+                            We define boundary conditions, acquire operational data, and set project objectives.
+                        </p>
+                        <span class="deliverable-tag">Output: Scope of Work</span>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="process-number">02</span>
+                        <h4 style="margin-bottom: 10px;">Numerical Simulation</h4>
+                        <p style="font-size: 0.9rem; color: #666;">
+                            Execution of high-fidelity analysis (FEA/CFD) using industry-leading solvers to replicate physics.
+                        </p>
+                        <span class="deliverable-tag">Output: Preliminary Data</span>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="process-number">03</span>
+                        <h4 style="margin-bottom: 10px;">Optimization</h4>
+                        <p style="font-size: 0.9rem; color: #666;">
+                            Iterative design refinement to reduce weight, improve fatigue life, or mitigate distortion.
+                        </p>
+                        <span class="deliverable-tag">Output: Design Proposal</span>
+                    </div>
+
+                    <div class="process-step">
+                        <span class="process-number">04</span>
+                        <h4 style="margin-bottom: 10px;">Validation & Report</h4>
+                        <p style="font-size: 0.9rem; color: #666;">
+                            Final verification against International Codes (DNV/ISO) and certification of results.
+                        </p>
+                        <span class="deliverable-tag">Output: Certified Report</span>
+                    </div>
+
+                </div>
             </div>
         </div>
 
-        <div class="card">
-            <h3>Manufacturing & WAAM Advisory</h3>
-            <p>With deep expertise in <strong>Wire Arc Additive Manufacturing (WAAM)</strong> and smart manufacturing, we provide strategic roadmaps for companies looking to integrate 3D metal printing into their production lines.</p>
-            <p>Our advisory includes material selection, process parameter optimization, and metallurgical considerations for high-performance components.</p>
-        </div>
-
-        <div class="card" style="text-align: center; background: var(--primary); color: white; border-top: 4px solid var(--accent);">
-            <h2 style="color: var(--accent);">Need Expert Advice?</h2>
-            <p>Book a consultation session with our lead engineering consultant to discuss your project requirements.</p>
-            <br>
-            <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px;">Request a Meeting</a>
+        <div class="card" style="background: var(--primary); color: white; text-align: center; margin-top: 60px; border-top: 4px solid var(--accent);">
+            <h2 style="color: var(--accent);">Start a Technical Consultation</h2>
+            <p style="margin-bottom: 25px; opacity: 0.9;">
+                Discuss your engineering challenges with our lead consultants. We provide an initial feasibility assessment for all new projects.
+            </p>
+            <a href="contact.html" class="submit-btn" style="background-color: var(--white); color: var(--primary); border: none;">Schedule Meeting</a>
         </div>
 
     </div>

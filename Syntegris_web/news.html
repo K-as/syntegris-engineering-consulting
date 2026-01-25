@@ -60,16 +60,37 @@
     <section class="page-title">
         <h1>Latest Updates</h1>
     </section>
+    <div class="news-container">
 
-    <div class="container">
-        
-        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px;">
-            
-            <div class="card">
-                <span style="color: gray; font-size: 0.9rem;">January 2026</span>
-                <h3 style="margin-top: 10px; color: var(--primary);">Syntegris Officially Established</h3>
-                <p>We are proud to announce our official launch as a hub for Smart Engineering in Malaysia. We are now open for consultation and software inquiries.</p>
-                <a href="#" style="color: var(--accent); font-weight: 700; text-decoration: none;">Read More &rarr;</a>
+            <div class="news-card">
+                <span class="news-date">January 26, 2026</span>
+                <h3>Launch of New Simulation Services</h3>
+                <div class="news-media">
+                    <img src="simulation-display.jpg" alt="Simulation Analysis">
+                </div>
+                <p class="news-text">
+                    We are expanding our technical offerings to include high-fidelity welding simulations. 
+                    <span class="full-content" style="display: none;">
+                        <br><br>
+                        Using DANTE and SDC Verifier, we can now predict residual stress and distortion in 
+                        complex assemblies, saving our clients significant time in the prototyping phase.
+                    </span>
+                </p>
+                <button class="read-more-btn" onclick="toggleNews(this)">Read More</button>
+            </div>
+
+            <div class="news-card">
+                <span class="news-date">January 20, 2026</span>
+                <h3>Syntegris Officially Established</h3>
+                <p class="news-text">
+                    We are proud to announce our official launch as a hub for Smart Engineering in Malaysia. 
+                    <span class="full-content" style="display: none;">
+                        <br><br>
+                        We are now open for consultation and software inquiries regarding structural integrity, 
+                        advanced manufacturing, and asset management.
+                    </span>
+                </p>
+                <button class="read-more-btn" onclick="toggleNews(this)">Read More</button>
             </div>
 
         </div>

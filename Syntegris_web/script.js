@@ -38,3 +38,30 @@ if (backToTopBtn) {
         window.scrollTo({ top: 0, behavior: 'smooth' });
     });
 }
+
+function toggleNews(button) {
+    // Find the hidden span within the same paragraph as the button
+    const card = button.closest('.news-card');
+    const fullContent = card.querySelector('.full-content');
+    
+    if (fullContent.style.display === "none") {
+        fullContent.style.display = "inline";
+        button.innerHTML = "Read Less";
+    } else {
+        fullContent.style.display = "none";
+        button.innerHTML = "Read More";
+    }
+}
+
+function toggleNews(button) {
+    const card = button.closest('.news-card');
+    const fullContent = card.querySelector('.full-content');
+    
+    if (fullContent.style.display === "none") {
+        fullContent.style.display = "inline";
+        button.innerText = "Read Less";
+    } else {
+        fullContent.style.display = "none";
+        button.innerText = "Read More";
+    }
+}
