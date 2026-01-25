@@ -18,6 +18,13 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
+
+            <button class="mobile-menu-btn" aria-label="Toggle Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <ul class="nav-links">
                 <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -49,16 +56,16 @@
     </header>
 
     <section class="home-hero">
-            <div style="position: relative; z-index: 2;"> <h1>Advanced Engineering <br> <span style="color: var(--accent);">Made Practical.</span></h1>
-                <p>We empower Malaysian industries with premier simulation software, structural integrity consulting, and specialized PIT treatments.</p>
-                
-                <div class="btn-group">
-                    <a href="products.html" class="hero-btn btn-gold">Explore Software</a>
-                    <a href="consultant.html" class="hero-btn btn-outline">Our Expertise</a>
-                </div>
-
+        <div style="position: relative; z-index: 2;">
+            <h1>Advanced Engineering <br> <span style="color: var(--accent);">Made Practical.</span></h1>
+            <p>We empower Malaysian industries with premier simulation software, structural integrity consulting, and specialized PIT treatments.</p>
+            
+            <div class="btn-group">
+                <a href="products.html" class="hero-btn btn-gold">Explore Software</a>
+                <a href="consultant.html" class="hero-btn btn-outline">Our Expertise</a>
             </div>
-        </section>  
+        </div>
+    </section>
 
     <div class="container">
         
@@ -117,17 +124,16 @@
 
     <div class="container">
         <div class="category-header">
-                    <h2>Our Technology Partners</h2>
-                    <p>We work with the world's best simulation developers and equipment manufacturers.</p>
-                </div>
+            <h2>Our Technology Partners</h2>
+            <p>We work with the world's best simulation developers and equipment manufacturers.</p>
+        </div>
 
-                <div class="logo-strip">
-                    <a href="sdc-verifier.html" title="SDC Verifier"><img src="SDC.png" alt="SDC Verifier"></a>
-                    <a href="dante.html" title="DANTE Solutions"><img src="DANTE.png" alt="DANTE Solutions"></a>
-                    <a href="stampack.html" title="Stampack Express"><img src="csm.png" alt="Stampack Express"></a>
-                    
-                    <a href="pit-hardware.html" title="PITEC GmbH"><img src="pitec.png" alt="PITEC Equipment"></a>
-                </div>
+        <div class="logo-strip">
+            <a href="sdc-verifier.html" title="SDC Verifier"><img src="SDC.png" alt="SDC Verifier"></a>
+            <a href="dante.html" title="DANTE Solutions"><img src="DANTE.png" alt="DANTE Solutions"></a>
+            <a href="stampack.html" title="Stampack Express"><img src="csm.png" alt="Stampack Express"></a>
+            <a href="pit-hardware.html" title="PITEC GmbH"><img src="pitec.png" alt="PITEC Equipment"></a>
+        </div>
         
         <br><br>
 
@@ -136,12 +142,45 @@
             <p style="margin-bottom: 25px;">Connect with us for a free consultation regarding your specific project needs.</p>
             <a href="contact.html" class="submit-btn" style="display: inline-block; width: auto; padding: 15px 40px;">Contact Us Today</a>
         </div>
-
     </div>
 
     <footer>
         <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
     </footer>
+
+    <button id="backToTop" title="Go to top">↑</button>
+
+    <script>
+        // 1. Mobile Menu Logic
+        const menuBtn = document.querySelector('.mobile-menu-btn');
+        const navLinks = document.querySelector('.nav-links');
+
+        menuBtn.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            menuBtn.classList.toggle('open');
+        });
+
+        // Close menu when a link is clicked
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                menuBtn.classList.remove('open');
+            });
+        });
+
+        // 2. Back to Top Logic
+        const backToTopBtn = document.getElementById("backToTop");
+        window.onscroll = function() {
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                backToTopBtn.style.display = "block";
+            } else {
+                backToTopBtn.style.display = "none";
+            }
+        };
+        backToTopBtn.addEventListener("click", function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+    </script>
 
 </body>
 </html>
