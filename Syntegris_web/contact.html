@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CONTACT US | SYNTEGRIS</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="haikal1.ico">
+</head>
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="index.html" class="logo-container">
+                <img src="haikal1.ico" alt="Syntegris Logo" class="logo-img">
+                <div class="brand-text">
+                    <span class="brand-name">SYNTEGRIS</span>
+                    <span class="brand-sub">ENGINEERING & CONSULTING</span>
+                </div>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Us</a></li>
+                
+                <li class="dropdown">
+                    <a href="products.html" class="dropbtn">Products</a>
+                    <ul class="dropdown-menu">
+                        <li class="nested-dropdown">
+                            <a href="javascript:void(0)" class="parent-link">Software &raquo;</a>
+                            <ul class="nested-menu">
+                                <li><a href="sdc-verifier.html">SDC Verifier</a></li>
+                                <li><a href="dante.html">DANTE</a></li>
+                                <li><a href="stampack.html">Stampack Express</a></li>
+                            </ul>
+                        </li>
+                        <li class="nested-dropdown">
+                            <a href="javascript:void(0)" class="parent-link">Hardware &raquo;</a>
+                            <ul class="nested-menu">
+                                <li><a href="pit-hardware.html">PIT Equipment</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="services.html">Services</a></li>
+                <li><a href="consultant.html">Consultant</a></li>
+                <li><a href="news.html">News</a></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-title">
+        <h1>Connect With Our Experts</h1>
+        <p>Expert technical support and software consultation across Malaysia.</p>
+    </section>
+
+    <div class="container">
+        <div class="contact-wrapper">
+            
+            <div class="contact-card">
+                <div class="form-header">
+                    <h2>INQUIRY FORM</h2>
+                    <p>Please fill out the form below and our lead consultant will reach out to you within 24 hours.</p>
+                </div>
+
+                <form action="https://formspree.io/f/haikalazhar24@gmail.com" method="POST" class="formal-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name</label>
+                            <input type="text" id="name" name="name" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Contact Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+60 12-345 6789" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Corporate Email</label>
+                        <input type="email" id="email" name="_replyto" placeholder="name@company.com" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Detailed Query</label>
+                        <textarea id="message" name="message" rows="6" placeholder="Please describe your technical requirements (SDC Verifier, DANTE, or Stampack)..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Send Official Inquiry</button>
+                </form>
+            </div>
+
+            <div class="contact-info-panel">
+                <div class="info-block">
+                    <h3>CONTACT US</h3>
+                    <p><strong>Email:</strong><br>haikalazhar24@gmail.com</p>
+                    <br>
+                    <p><strong>Operating Hours:</strong><br>Mon - Fri | 9:00 AM - 6:00 PM</p>
+                    <br>
+                    <p><strong>Location:</strong><br>
+                        No 24, Jalan Pegaga U12/9B,<br>
+                        40170, Shah Alam,<br>
+                        Selangor, Malaysia
+                    </p>
+                </div>
+
+                <div class="card" style="border-top: 4px solid var(--accent); padding: 20px; margin-top: 0;">
+                    <p style="font-size: 0.85rem; color: #666; margin: 0;">
+                        <em>Your data is handled securely and will only be used for official communication regarding your engineering inquiry.</em>
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>
+    </footer>
+
+</body>
+</html>

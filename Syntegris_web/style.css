@@ -1,0 +1,736 @@
+/* SYNTEGRIS ENGINEERING & CONSULTING - OFFICIAL STYLESHEET */
+
+/* 1. BRAND VARIABLES */
+:root {
+    --primary: #121f3d;
+    --accent: #d4af37;
+    --light: #f8f9fa;
+    --text: #333333;
+    --white: #ffffff;
+    --shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    --header-height: 80px;
+}
+
+/* 2. GENERAL RESET */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+    font-family: 'Inter', 'Segoe UI', Tahoma, sans-serif; 
+}
+
+body { 
+    background-color: var(--light); 
+    color: var(--text); 
+    line-height: 1.6; 
+    scroll-behavior: smooth;
+    padding-top: var(--header-height); 
+}
+
+/* 3. FIXED HEADER & NAVIGATION */
+header {
+    background: var(--white);
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: var(--header-height);
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.logo-container { 
+    display: flex; 
+    align-items: center; 
+    text-decoration: none;
+    min-width: 300px;
+}
+
+.logo-img { 
+    height: 55px; 
+    width: auto;
+    margin-right: 15px; 
+    flex-shrink: 0;
+}
+
+.brand-name { 
+    font-size: 1.4rem; 
+    font-weight: 800; 
+    color: var(--primary); 
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.brand-sub { 
+    font-size: 0.65rem; 
+    color: #777777; 
+    display: block; 
+    margin-top: -2px; 
+}
+
+/* 4. MAIN MENU LINKS */
+.nav-links { 
+    display: flex; 
+    list-style: none;
+    align-items: center;
+}
+
+.nav-links li { margin-left: 18px; }
+
+.nav-links a { 
+    text-decoration: none; 
+    color: var(--primary); 
+    font-weight: 600; 
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    transition: 0.3s;
+    padding: 5px 0;
+}
+
+.nav-links a.active, 
+.nav-links .dropdown .dropbtn.active { 
+    color: var(--accent) !important; 
+    border-bottom: 2px solid var(--accent);
+}
+
+.nav-links a:hover { color: var(--accent); }
+
+/* 5. DROPDOWN MENU */
+.dropdown { position: relative; }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    z-index: 1001;
+    border-top: 3px solid var(--accent);
+    border-radius: 0 0 8px 8px;
+}
+
+.dropdown-content a {
+    color: var(--primary) !important;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-transform: none;
+    border-bottom: 1px solid #eee;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--light);
+    color: var(--accent) !important;
+}
+
+.dropdown:hover .dropdown-content { display: block; }
+
+/* 6. PAGE TITLE (THE BLUE BAR) */
+.hero, .page-title {
+    height: 180px; 
+    background: linear-gradient(135deg, var(--primary) 0%, #1a2a6c 100%);
+    color: var(--white);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.hero h1, .page-title h1 {
+    font-size: 2.2rem; 
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.hero p, .page-title p {
+    font-size: 1rem;
+    opacity: 0.9;
+    max-width: 800px;
+}
+
+/* 7. CONTENT LAYOUT (CARDS) */
+.container { 
+    max-width: 1100px; 
+    margin: 40px auto; 
+    padding: 0 20px; 
+}
+
+.card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    margin-bottom: 30px;
+    border-top: 4px solid var(--accent);
+}
+
+.side-by-side-container {
+    display: flex;
+    gap: 20px;
+}
+.side-by-side-container .card { flex: 1; }
+
+/* 8. FORMAL CONTACT FORM & BOXES */
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 40px;
+}
+
+.contact-card {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+}
+
+.info-block {
+    background: var(--white);      /* Changed from primary to white */
+    color: var(--text);            /* Changed text to dark gray */
+    padding: 30px;
+    border-radius: 12px;
+    border-top: 4px solid var(--accent); /* Matches the other cards */
+    box-shadow: var(--shadow);     /* Adds depth so it looks like a box */
+    margin-bottom: 20px;
+}
+
+/* This targets the "Direct Contact" title specifically */
+.info-block h3 {
+    color: var(--primary);         /* Set title to Blue */
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.formal-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.form-group { margin-bottom: 20px; }
+
+.form-group label {
+    display: block;
+    font-size: 0.8rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+.form-group input, 
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1.5px solid #dce1e5;
+    border-radius: 6px;
+    background: #fdfdfd;
+}
+
+.form-group input:focus, 
+.form-group textarea:focus {
+    border-color: var(--accent);
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1); /* FIXED THIS LINE */
+}
+
+.submit-btn {
+    background: var(--primary);
+    color: var(--white);
+    padding: 15px;
+    border: none;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+}
+
+.submit-btn:hover { background: #1d2e5a; transform: translateY(-2px); }
+
+/* 9. FOOTER */
+footer { 
+    background: var(--primary); 
+    color: var(--white); 
+    text-align: center; 
+    padding: 40px 0; 
+    margin-top: 60px;
+}
+
+/* 10. MOBILE RESPONSIVENESS */
+@media (max-width: 900px) {
+    .contact-wrapper, .side-by-side-container { flex-direction: column; }
+    .formal-form .form-row { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+}
+
+/* 5. DROPDOWN & NESTED MENU STYLES */
+.dropdown { position: relative; }
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    list-style: none;
+    border-top: 3px solid var(--accent);
+}
+
+.dropdown:hover > .dropdown-menu { display: block; }
+
+/* Styles for the Software/Hardware items */
+.dropdown-menu li { position: relative; }
+
+.dropdown-menu a {
+    color: var(--primary) !important;
+    padding: 12px 16px;
+    display: block;
+    text-decoration: none;
+    font-size: 0.9rem;
+    border-bottom: 1px solid #eee;
+}
+
+/* NESTED MENU (The Side Menu) */
+.nested-menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%; /* Spawns to the right of the parent */
+    background-color: var(--white);
+    min-width: 200px;
+    box-shadow: var(--shadow);
+    list-style: none;
+    border-left: 2px solid var(--accent);
+}
+
+.nested-dropdown:hover > .nested-menu { display: block; }
+
+/* Make Hardware/Software labels look different but unclickable */
+.parent-link {
+    cursor: default;
+    font-weight: 700 !important;
+    background-color: #fafafa;
+    display: flex;
+    justify-content: space-between;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--light);
+    color: var(--accent) !important;
+}
+
+/* PRODUCT PAGE STYLES */
+
+.category-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.category-header h2 {
+    color: var(--primary);
+    font-size: 1.8rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.section-divider {
+    border: 0;
+    height: 1px;
+    background: #e0e0e0;
+    margin: 60px 0;
+}
+
+/* 3-Column Grid for Software */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    border: 1px solid #eee;
+    text-align: center;
+    transition: transform 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+/* Uniform Image Sizing for Software */
+.image-box {
+    height: 120px; /* Fixed height container */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.image-box img {
+    max-height: 100%;
+    max-width: 180px; /* Limits width so logos don't get too huge */
+    object-fit: contain; /* Ensures logo isn't stretched/squashed */
+}
+
+.product-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 20px;
+    flex-grow: 1; /* Pushes button to bottom */
+}
+
+/* Button Styling */
+.learn-more-btn {
+    display: inline-block;
+    padding: 10px 25px;
+    background-color: var(--white);
+    color: var(--primary);
+    border: 2px solid var(--primary);
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: 0.3s;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.learn-more-btn:hover {
+    background-color: var(--primary);
+    color: var(--white);
+}
+
+/* HARDWARE FEATURE CARD (Side-by-Side) */
+.feature-card {
+    display: flex;
+    background: var(--white);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+    border-left: 5px solid var(--accent);
+    align-items: center;
+}
+
+.feature-content {
+    flex: 1;
+    padding: 40px;
+}
+
+.feature-image {
+    flex: 1;
+    background: #f4f4f4;
+    height: 100%;
+    min-height: 350px; /* Ensures the hardware image area is big */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feature-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Makes the PIT image fill the space beautifully */
+}
+
+.feature-list {
+    list-style: none;
+    padding: 0;
+    margin: 20px 0;
+}
+
+.feature-list li {
+    padding-left: 20px;
+    position: relative;
+    margin-bottom: 8px;
+    color: #555;
+}
+
+.feature-list li::before {
+    content: "✔";
+    color: var(--accent);
+    position: absolute;
+    left: 0;
+    font-weight: bold;
+}
+
+.subtitle {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: block;
+}
+
+/* Mobile Responsive Fix */
+@media (max-width: 900px) {
+    .feature-card { flex-direction: column-reverse; }
+    .feature-image { width: 100%; min-height: 250px; }
+}
+
+/* =========================
+   HOMEPAGE SPECIFIC STYLES 
+   ========================= */
+
+/* A taller, more impressive hero section for the homepage */
+.home-hero {
+    height: 90vh; /* Takes up almost the full screen */
+    min-height: 600px;
+    background: linear-gradient(rgba(18, 31, 61, 0.85), rgba(18, 31, 61, 0.7)), url('engineering-bg.jpg'); /* You will need a background image */
+    background-size: cover;
+    background-position: center;
+    color: var(--white);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    margin-top: -80px; /* Pulls it up behind the header */
+    padding-top: 80px;
+}
+
+.home-hero h1 {
+    font-size: 3.5rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+    line-height: 1.1;
+    text-transform: uppercase;
+}
+
+.home-hero p {
+    font-size: 1.2rem;
+    max-width: 700px;
+    margin-bottom: 35px;
+    color: #e0e0e0;
+}
+
+.btn-group {
+    display: flex;
+    gap: 15px;
+}
+
+/* 3-Column Features Section */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: -50px; /* Overlaps the hero slightly for a modern look */
+    position: relative;
+    z-index: 10;
+}
+
+.feature-box {
+    background: var(--white);
+    padding: 35px;
+    border-radius: 8px;
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+    border-bottom: 4px solid var(--accent);
+    text-align: center;
+    transition: transform 0.3s;
+}
+
+.feature-box:hover {
+    transform: translateY(-10px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 20px;
+    display: block;
+}
+
+/* Partner Logos Section - Full Color */
+.logo-strip {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+    margin-top: 30px;
+    /* Removed opacity: 0.7 so they are fully visible */
+}
+
+.logo-strip img {
+    height: 60px; /* Increased slightly for better visibility */
+    transition: 0.3s;
+    /* Removed filter: grayscale(100%); so they are always colored */
+}
+
+.logo-strip img:hover {
+    /* Removed filter change since they are already colored */
+    transform: scale(1.1); /* Keeps the nice "pop" effect when you hover */
+}
+
+/* Stats Section */
+.stats-container {
+    background: var(--primary);
+    color: var(--white);
+    padding: 60px 20px;
+    text-align: center;
+    margin: 60px 0;
+}
+
+.stat-grid {
+    display: flex;
+    justify-content: space-around;
+    max-width: 1000px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.stat-item h3 {
+    font-size: 2.5rem;
+    color: var(--accent);
+    margin-bottom: 5px;
+}
+
+/* Responsive Font Sizes */
+@media (max-width: 768px) {
+    .home-hero h1 { font-size: 2.2rem; }
+    .btn-group { flex-direction: column; }
+    .stats-container { padding: 40px 20px; }
+    .stat-grid { gap: 30px; }
+}
+
+/* 10. MOBILE RESPONSIVENESS */
+@media (max-width: 1024px) {
+    header {
+        height: auto;
+        padding: 10px 0;
+    }
+
+    .navbar {
+        flex-direction: column; /* Stacks logo and menu */
+        gap: 15px;
+    }
+
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        margin: 0;
+    }
+
+    .nav-links li {
+        margin: 5px 10px; /* Gives links more breathing room on mobile */
+    }
+
+    /* Adjust the dropdowns for touch screens */
+    .dropdown-menu, .nested-menu {
+        position: static; /* Makes them push content down instead of floating */
+        box-shadow: none;
+        border-left: 2px solid var(--accent);
+        margin-left: 10px;
+        display: block; /* Shows all options on mobile for easier navigation */
+    }
+
+    .nested-dropdown .parent-link {
+        background: none;
+        color: var(--accent) !important;
+    }
+}
+/* =========================
+   TEAM / ORG CHART STYLES 
+   ========================= */
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Auto-adjusts for mobile */
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.team-member {
+    background: var(--white);
+    padding: 30px;
+    text-align: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+    border-top: 3px solid var(--accent); /* Gold top border */
+    transition: transform 0.3s ease;
+}
+
+.team-member:hover {
+    transform: translateY(-5px); /* Slight lift effect on hover */
+}
+
+.team-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%; /* Makes the image a perfect circle */
+    object-fit: cover;
+    margin-bottom: 20px;
+    border: 3px solid var(--light);
+}
+
+.team-role {
+    color: var(--accent);
+    font-weight: 700;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    display: block;
+}
+
+.team-bio {
+    font-size: 0.9rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Motto / Quote Section */
+.motto-box {
+    background-color: #f8f9fa; /* Light grey background */
+    border-left: 5px solid var(--accent); /* Gold line on the left */
+    padding: 30px;
+    margin: 40px 0;
+    font-style: italic;
+    font-family: 'Georgia', serif; /* Serif font looks more "established" */
+    color: #555;
+    position: relative;
+}
+
+.motto-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--primary);
+    margin-bottom: 10px;
+    display: block;
+    font-style: normal; /* Keep the main motto upright */
+}
+
