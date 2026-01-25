@@ -788,3 +788,198 @@ footer {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(255,255,255,0.2);
 }
+
+/* =========================================
+   MOBILE RESPONSIVENESS (Paste at bottom)
+   ========================================= */
+
+/* 1. HIDE MENU BUTTON ON DESKTOP */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+    z-index: 1001;
+}
+
+.mobile-menu-btn span {
+    display: block;
+    width: 25px;
+    height: 3px;
+    background-color: var(--primary);
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+/* 2. TABLET & MOBILE ADJUSTMENTS */
+@media screen and (max-width: 900px) {
+    
+    /* Show the Hamburger Button */
+    .mobile-menu-btn {
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+
+    /* Transform the Hamburger into an 'X' when open */
+    .mobile-menu-btn.open span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    .mobile-menu-btn.open span:nth-child(2) {
+        opacity: 0;
+    }
+    .mobile-menu-btn.open span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* Navigation Menu - Slide out from right */
+    .nav-links {
+        position: fixed;
+        right: 0;
+        top: var(--header-height);
+        height: calc(100vh - var(--header-height));
+        background-color: var(--white);
+        flex-direction: column;
+        align-items: center;
+        width: 70%; /* Covers 70% of screen */
+        transform: translateX(100%); /* Hidden by default */
+        transition: transform 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        padding-top: 50px;
+    }
+
+    .nav-links.active {
+        transform: translateX(0%); /* Slide in to show */
+    }
+
+    .nav-links li {
+        margin: 20px 0;
+    }
+
+    /* Adjust Hero Text Size */
+    .home-hero h1 {
+        font-size: 2.5rem;
+        line-height: 1.2;
+    }
+    
+    .home-hero p {
+        font-size: 1rem;
+        padding: 0 10px;
+    }
+
+    /* Fix Button Group stacking */
+    .btn-group {
+        flex-direction: column;
+        width: 100%;
+        align-items: center;
+    }
+
+    .hero-btn {
+        width: 80%;
+        text-align: center;
+    }
+
+    /* Fix Stats Grid to 2 columns instead of 4 */
+    .stat-grid {
+        grid-template-columns: 1fr 1fr; 
+        gap: 20px;
+    }
+
+    /* Fix Logo Strip (Partners) stacking */
+    .logo-strip {
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+    
+    .logo-strip img {
+        height: 40px; /* Smaller logos on phone */
+    }
+}
+
+/* =========================
+   CONTACT PAGE STYLES 
+   ========================= */
+
+.contact-wrapper {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    margin-top: 40px;
+}
+
+.contact-info-box {
+    background: var(--primary);
+    color: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+}
+
+.contact-info-box h3 {
+    color: var(--accent);
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+}
+
+.info-item {
+    margin-bottom: 25px;
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.info-icon {
+    font-size: 1.2rem;
+    color: var(--accent);
+}
+
+.contact-form-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    border-top: 4px solid var(--accent);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--primary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+    font-size: 1rem;
+    transition: border 0.3s;
+}
+
+.form-control:focus {
+    border-color: var(--primary);
+    outline: none;
+}
+
+textarea.form-control {
+    resize: vertical;
+    height: 150px;
+}
+
+/* Map Section */
+.map-container {
+    margin-top: 50px;
+    width: 100%;
+    height: 400px;
+    background-color: #e9ecef;
+    border-radius: 8px;
+    overflow: hidden;
+}
