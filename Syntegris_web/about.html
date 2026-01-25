@@ -6,6 +6,73 @@
     <title>SYNTEGRIS | Engineering & Consulting</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === NEW LEADERSHIP CARD STYLES === */
+        
+        /* The Grid Layout */
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 20px 0;
+        }
+
+        /* The Card Box */
+        .team-member {
+            background: #ffffff;
+            border-radius: 8px;           /* Rounded corners */
+            padding: 40px 30px;           /* Breathing room inside */
+            text-align: center;
+            position: relative;
+            
+            /* The Shadow & Shape */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            border-top: 5px solid var(--accent); /* Gold line at the top */
+            transition: all 0.3s ease;
+        }
+
+        /* Hover Effect: Lifts up slightly */
+        .team-member:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+        }
+
+        /* The Photo */
+        .team-photo {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #f8f9fa; /* Light grey ring */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+
+        /* The Name */
+        .team-member h3 {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-bottom: 5px;
+        }
+
+        /* The Role */
+        .team-role {
+            display: block;
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+        }
+
+        /* The Bio Text */
+        .team-bio {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+        }
+    </style>
 </head>
 <body>
 
@@ -100,7 +167,7 @@
             </div>
         </div>
 
-        <div class="category-header" style="margin-top: 80px;">
+        <div class="category-header" style="margin-top: 80px; text-align: center;">
             <h2>Our Leadership</h2>
             <p>Guided by engineers committed to engineering excellence.</p>
         </div>

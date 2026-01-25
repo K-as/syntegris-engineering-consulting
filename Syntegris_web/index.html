@@ -6,6 +6,21 @@
     <title>SYNTEGRIS | Engineering & Consulting</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === FORCE LOGOS TO BE COLORED === */
+        .logo-strip img {
+            filter: none !important;       /* Removes the gray filter */
+            -webkit-filter: none !important; 
+            opacity: 1 !important;         /* Ensures they are fully visible */
+            mix-blend-mode: normal !important;
+        }
+        
+        /* Optional: Add a small hover zoom effect instead of color change */
+        .logo-strip img:hover {
+            transform: scale(1.1);
+            transition: transform 0.3s ease;
+        }
+    </style>
 </head>
 <body>
 
@@ -131,7 +146,7 @@
     </div>
 
     <div class="container">
-        <div class="category-header">
+        <div class="category-header"style="text-align: center;">
             <h2>Our Technology Partners</h2>
             <p>We work with the world's best simulation developers and equipment manufacturers.</p>
         </div>
@@ -147,7 +162,7 @@
 
         <div class="card" style="background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%); text-align: center; border-top: 4px solid var(--primary);">
             <h2>Ready to Optimize Your Engineering?</h2>
-            <p style="margin-bottom: 25px;">Connect with us for a free consultation regarding your specific project needs.</p>
+            <p style="margin-bottom: 25px; text-align: center;">Connect with us for a free consultation regarding your specific project needs.</p>
             <a href="contact.html" class="submit-btn" style="display: inline-block; width: auto; padding: 15px 40px;">Contact Us Today</a>
         </div>
     </div>
