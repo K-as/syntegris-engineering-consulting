@@ -734,3 +734,57 @@ footer {
     font-style: normal; /* Keep the main motto upright */
 }
 
+/* =========================
+   HERO BUTTONS UPGRADE 
+   ========================= */
+
+.btn-group {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap;
+}
+
+.hero-btn {
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1rem;
+    font-weight: 700;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-radius: 50px; /* Makes them pill-shaped */
+    transition: all 0.3s ease; /* Smooth animation */
+    position: relative;
+    z-index: 10;
+}
+
+/* 1. Primary Button (Gold) */
+.btn-gold {
+    background-color: var(--accent);
+    color: var(--primary);
+    border: 2px solid var(--accent);
+    box-shadow: 0 5px 15px rgba(212, 160, 23, 0.4); /* Gold glow */
+}
+
+.btn-gold:hover {
+    background-color: transparent; /* Becomes see-through */
+    color: var(--white);
+    transform: translateY(-5px); /* Moves up slightly */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+}
+
+/* 2. Secondary Button (Transparent/White) */
+.btn-outline {
+    background-color: transparent;
+    color: var(--white);
+    border: 2px solid var(--white);
+}
+
+.btn-outline:hover {
+    background-color: var(--white);
+    color: var(--primary); /* Text turns dark */
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(255,255,255,0.2);
+}
