@@ -1,4 +1,4 @@
-/* SYNTEGRIS ENGINEERING & CONSULTING - FINAL FIXED STYLESHEET */
+/* SYNTEGRIS ENGINEERING & CONSULTING - OFFICIAL STYLESHEET */
 
 /* 1. BRAND VARIABLES */
 :root {
@@ -99,20 +99,18 @@ header {
     font-weight: 600;
     font-size: 0.95rem;
     transition: color 0.3s;
-    padding: 0 5px; /* Adds a bit of clickable area */
+    padding: 0 5px; 
 }
 
 .nav-links a:hover, .nav-links a.active {
     color: var(--accent);
 }
 
-/* === DESKTOP DROPDOWN MENUS (The Fix) === */
-
-/* Main Dropdown Container */
+/* === DESKTOP DROPDOWNS (FIXED) === */
 .dropdown-menu {
     display: none;
     position: absolute;
-    top: 100%; /* Opens exactly at the bottom of the header */
+    top: 100%; 
     left: 0;
     background: var(--white);
     box-shadow: var(--shadow);
@@ -123,27 +121,23 @@ header {
     z-index: 1000;
 }
 
-/* Main Dropdown Bridge (Invisible Safe Zone) */
-/* This fills any tiny gap between the navbar and the menu */
+/* Invisible Bridge (Prevents closing) */
 .dropdown-menu::before {
     content: "";
     position: absolute;
-    top: -20px; /* Extends invisible area upwards */
+    top: -20px; 
     left: 0;
     width: 100%;
     height: 20px;
     background: transparent;
 }
 
-/* Show Dropdown on Hover */
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
+.dropdown:hover .dropdown-menu { display: block; }
 
 .dropdown-menu li {
     width: 100%;
-    display: block; /* Stacks items vertically */
-    height: auto; /* Reset height */
+    display: block; 
+    height: auto; 
     padding: 0;
 }
 
@@ -154,20 +148,16 @@ header {
     width: 100%;
 }
 
-.dropdown-menu a:hover {
-    background: var(--light);
-}
+.dropdown-menu a:hover { background: var(--light); }
 
-/* === NESTED DROPDOWN (Side Flyout) === */
-.nested-dropdown {
-    position: relative;
-}
+/* === NESTED DROPDOWNS === */
+.nested-dropdown { position: relative; }
 
 .nested-menu {
     display: none;
     position: absolute;
-    left: 100%; /* Push to the right */
-    top: -5px;  /* Align slightly higher to cover gap */
+    left: 100%; 
+    top: -5px;  
     background: var(--white);
     box-shadow: var(--shadow);
     min-width: 220px;
@@ -175,29 +165,24 @@ header {
     list-style: none;
     padding: 10px 0;
     z-index: 1001;
-    margin-left: -2px; /* Pull back slightly to overlap parent */
+    margin-left: -2px; 
 }
 
-/* Nested Menu Bridge (Invisible Safe Zone) */
-/* This ensures mouse doesn't "fall" between the parent and the submenu */
+/* Invisible Bridge for Submenu */
 .nested-menu::before {
     content: "";
     position: absolute;
-    right: 100%; /* To the left of the submenu */
+    right: 100%; 
     top: 0;
     height: 100%;
-    width: 20px; /* Wide invisible bridge */
+    width: 20px; 
     background: transparent;
 }
 
-/* Show Nested Menu on Hover */
-.nested-dropdown:hover .nested-menu {
-    display: block;
-}
+.nested-dropdown:hover .nested-menu { display: block; }
 
 /* 4. HERO SECTION */
 .home-hero {
-    /* Updated image name */
     background: linear-gradient(rgba(18, 31, 61, 0.85), rgba(18, 31, 61, 0.85)), url('engineering-bg.jpg'); 
     background-size: cover;
     background-position: center;
@@ -262,6 +247,36 @@ header {
 .card:hover {
     border-color: var(--accent);
     transform: translateY(-5px);
+}
+
+/* === NEW: FEATURE CARD (PRODUCT LAYOUT) === */
+.feature-card {
+    display: flex; /* Side-by-side on desktop */
+    gap: 40px;
+    margin-bottom: 40px;
+    background: var(--white);
+    padding: 40px;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    align-items: center;
+}
+
+.feature-content { flex: 1; }
+.feature-image { flex: 1; text-align: center; }
+
+.feature-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.subtitle {
+    color: var(--accent);
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+    display: block;
 }
 
 /* 6. FEATURES GRID */
@@ -597,17 +612,14 @@ textarea.form-control {
 }
 
 /* =========================================
-   10. MOBILE RESPONSIVENESS (ACCORDION STYLE)
+   10. MOBILE RESPONSIVENESS (FINAL FIX)
    ========================================= */
 
-/* Hide the hamburger button on Desktop */
-.mobile-menu-btn {
-    display: none;
-}
+.mobile-menu-btn { display: none; }
 
 @media (max-width: 900px) {
     
-    /* 1. Show the Hamburger Button */
+    /* HAMBURGER BUTTON */
     .mobile-menu-btn {
         display: block;
         position: absolute;
@@ -632,7 +644,7 @@ textarea.form-control {
     .mobile-menu-btn.open span:nth-child(2) { opacity: 0; }
     .mobile-menu-btn.open span:nth-child(3) { transform: rotate(45deg) translate(-5px, -6px); }
 
-    /* 2. The Menu Drawer */
+    /* MOBILE MENU DRAWER */
     .nav-links {
         display: flex; 
         position: fixed;
@@ -657,7 +669,7 @@ textarea.form-control {
         width: 100%; 
         text-align: center;
         margin: 0;
-        display: block; /* Ensures mobile stack */
+        display: block;
         height: auto;
     }
 
@@ -667,37 +679,38 @@ textarea.form-control {
         width: 100%;
     }
 
-    /* === MOBILE DROPDOWNS: NO FLYOUTS === */
-    /* Forces menus to open downward (accordion) on mobile */
+    /* MOBILE DROPDOWNS (Stacking) */
     .dropdown-menu, .nested-menu {
         position: static; 
         width: 100%;
         box-shadow: none;
         border-top: none;
-        display: none; /* Hidden by default */
+        display: none;
         float: none;
         margin: 0;
         padding: 0;
     }
 
-    /* Remove the bridge on mobile since we stack */
-    .dropdown-menu::before, .nested-menu::before {
-        display: none;
-    }
-
+    .dropdown-menu::before, .nested-menu::before { display: none; }
     .dropdown-menu { background-color: #f4f4f4; }
     .nested-menu { background-color: #e9e9e9; }
-
-    /* Open when interacting */
     .dropdown:hover .dropdown-menu { display: block; }
     .nested-dropdown:hover .nested-menu { display: block; }
-
-    /* Link styles */
     .dropdown-menu a { padding: 15px 0; font-size: 0.9rem; }
     .nested-menu a { padding: 12px 0; font-size: 0.85rem; color: #555; }
 
-    /* General Mobile Layout Adjustments */
+    /* LAYOUT FIXES FOR PHONE */
+    
+    /* Fix: Stack feature cards vertically (Image on top) */
+    .feature-card {
+        flex-direction: column-reverse; /* Puts image above text if HTML order is text-first */
+        text-align: center;
+        padding: 25px;
+    }
+
+    .card { padding: 25px; } /* Reduce padding */
+
     .contact-wrapper, .side-by-side-container { flex-direction: column; }
-    .home-hero h1 { font-size: 2.5rem; }
+    .home-hero h1 { font-size: 2.2rem; }
     .stat-grid { grid-template-columns: 1fr 1fr; }
 }
