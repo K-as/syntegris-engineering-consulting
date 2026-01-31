@@ -6,6 +6,131 @@
     <title>STAMPACK XPRESS | SYNTEGRIS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === CLEAN STAMPACK LAYOUT === */
+        
+        /* 1. Hero Section */
+        .stampack-hero {
+            background-color: #f4f6f9; /* Soft tech grey */
+            color: #333;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .stampack-hero h1 {
+            color: var(--primary); /* Navy Blue instead of Red */
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .stampack-hero p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .hero-img-box {
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            background: #fff;
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            display: block;
+        }
+
+        /* 2. Comparison Box (Why Simulate) */
+        .comparison-box {
+            background: #fff;
+            border-top: 4px solid var(--accent); /* Gold line */
+            padding: 40px;
+            margin: 60px 0;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-radius: 4px;
+        }
+
+        .comparison-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        /* 3. Split Layout for Content */
+        .content-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .split-layout.reverse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 900px) {
+            .split-layout, .split-layout.reverse {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        .text-col { flex: 1; }
+        .img-col { flex: 1; }
+
+        .img-col img {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+        }
+
+        .section-header {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+        }
+
+        /* List Styling */
+        .feature-list-clean {
+            list-style: none;
+            padding: 0;
+        }
+
+        .feature-list-clean li {
+            margin-bottom: 20px;
+            padding-left: 20px;
+            position: relative;
+            color: #555;
+        }
+
+        .feature-list-clean li strong {
+            color: var(--primary);
+            display: block;
+            font-size: 1.05rem;
+            margin-bottom: 4px;
+        }
+
+        .feature-list-clean li::before {
+            content: "•";
+            color: var(--accent);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+            line-height: 1;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -18,9 +143,7 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span><span></span><span></span>
-            </button>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -51,36 +174,102 @@
         </nav>
     </header>
 
-    <section class="page-title">
-        <h1>Stampack Xpress</h1>
+    <section class="stampack-hero">
+        <div class="container">
+            <img src="csm.png" alt="Stampack Logo" style="height: 60px; margin-bottom: 20px;">
+            <h1>Virtual Try-Out for Tool Designers</h1>
+            <p>
+                Validate your sheet metal forming process virtually. 
+                Identify splits, wrinkles, and springback before you cut a single piece of steel.
+            </p>
+            
+            <div class="hero-img-box">
+                <img src="stampack_hero.jpg" alt="Stampack Simulation Overview" onerror="this.src='https://via.placeholder.com/800x450?text=Progressive+Die+Simulation'">
+            </div>
+        </div>
     </section>
 
     <div class="container">
-        <div class="card">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <img src="csm.png" alt="Stampack Logo" style="max-height: 80px;">
+        <div class="comparison-box">
+            <h3 class="comparison-title">Why Stampack Xpress?</h3>
+            <div class="side-by-side-container" style="align-items: flex-start; gap: 40px;">
+                <div style="flex: 1;">
+                    <h4 style="color:#666; margin-bottom:10px;">The Old Way (Trial & Error)</h4>
+                    <p style="font-size: 0.95rem; color: #777;">
+                        Building the physical tool, testing it on the press, finding cracks, grinding the tool, and testing again. This is expensive and delays delivery.
+                    </p>
+                </div>
+                <div style="flex: 1;">
+                    <h4 style="color:var(--primary); margin-bottom:10px;">The Stampack Way</h4>
+                    <p style="font-size: 0.95rem; color: #333;">
+                        Simulate the process in minutes. Stampack Xpress is designed for toolmakers, not scientists. No deep FEA knowledge is required to get accurate results.
+                    </p>
+                </div>
             </div>
-            
-            <h2>Sheet Metal Forming Simulation</h2>
-            <p>Stampack Xpress is a practical simulation tool designed for toolmakers and method planners. It validates the forming process of sheet metal parts quickly and accurately, without requiring deep FEA expertise.</p>
-            
-            <ul class="feature-list" style="margin-top: 20px; list-style-position: inside;">
-                <li><strong>Cracks & Thinning:</strong> Detect material failure early.</li>
-                <li><strong>Wrinkling Analysis:</strong> Visualize compression zones.</li>
-                <li><strong>Springback Compensation:</strong> Accurate prediction of material elastic recovery.</li>
-                <li><strong>Material Savings:</strong> Optimize blank sizes.</li>
-            </ul>
         </div>
+    </div>
 
-        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
-            <h2 style="color: var(--primary);">Forming Simulation Made Simple</h2>
-            <p style="max-width: 700px; margin: 10px auto 25px auto;">
-                Validate your tool design and stamping process in minutes.
+    <div class="content-section">
+        <div class="container split-layout">
+            <div class="text-col">
+                <h2 class="section-header">Simulation Modules</h2>
+                <p style="margin-bottom: 25px; color: #666;">Tailored solutions for every sheet metal thickness and process type.</p>
+                
+                <ul class="feature-list-clean">
+                    <li>
+                        <strong>Shell Simulation</strong>
+                        Ideal for thin sheets and rapid prototyping. Fast calculation speed for quick iterations.
+                    </li>
+                    <li>
+                        <strong>Solid Simulation</strong>
+                        Essential for thick plates, coining, and ironing. Calculates stress through the thickness.
+                    </li>
+                    <li>
+                        <strong>Springback Compensation</strong>
+                        Automatically modifies tool geometry to counteract material bounce-back.
+                    </li>
+                </ul>
+            </div>
+            <div class="img-col">
+                <img src="stampack_solid.jpg" alt="Solid Simulation Result" onerror="this.src='https://via.placeholder.com/600x400?text=Solid+Simulation+Example'">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section" style="background-color: #fcfcfc;">
+        <div class="container split-layout reverse">
+            <div class="text-col">
+                <h2 class="section-header">Detect Defects Early</h2>
+                <p style="margin-bottom: 25px; color: #666;">Secure your process reliability and reduce scrap rates.</p>
+                
+                <ul class="feature-list-clean">
+                    <li>
+                        <strong>Material Failure (Cracks)</strong>
+                        Identify zones where thinning exceeds limits or material splits occur.
+                    </li>
+                    <li>
+                        <strong>Wrinkling Analysis</strong>
+                        Visualize compression zones to prevent visible surface defects.
+                    </li>
+                    <li>
+                        <strong>Trim Optimization</strong>
+                        Calculate the optimal blank outline to ensure the final part net shape is correct.
+                    </li>
+                </ul>
+            </div>
+            <div class="img-col">
+                <img src="stampack_defects.jpg" alt="Defect Analysis" onerror="this.src='https://via.placeholder.com/600x400?text=Defect+Analysis+Simulation'">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 60px; background: #fff;">
+            <h2 style="color: var(--primary);">Start Your Virtual Try-Out</h2>
+            <p style="max-width: 700px; margin: 10px auto 25px auto; font-size: 1.05rem;">
+                Reduce tool trial loops and deliver dies faster. Request a trial license today.
             </p>
-            
-            <a href="https://www.stampack.com/about/downloads.html" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; margin-right: 10px;">Download Trial</a>
-
-            <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; background-color: var(--white); color: var(--primary); border: 2px solid var(--primary);">Get A Quote</a>
+            <a href="contact.html" class="submit-btn" style="display: inline-block; width: auto; padding: 15px 40px;">Request Trial License</a>
         </div>
     </div>
 
@@ -89,7 +278,6 @@
     </footer>
 
     <button id="backToTop" title="Go to top">↑</button>
-
     <script src="script.js"></script>
 
 </body>

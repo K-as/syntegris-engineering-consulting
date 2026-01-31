@@ -3,9 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PIT Equipment (HFMI) | SYNTEGRIS</title>
+    <title>PIT EQUIPMENT | SYNTEGRIS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === PIT PAGE STYLES === */
+
+        /* 1. Industrial Hero */
+        .pit-hero {
+            background-color: #f4f6f9;
+            color: #333;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .pit-hero h1 {
+            color: var(--primary);
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+
+        .pit-hero p {
+            font-size: 1.15rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        /* 2. Text-Heavy Content Sections */
+        .content-section {
+            padding: 60px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .split-layout { flex-direction: column; gap: 40px; }
+        }
+
+        .text-col { flex: 1; }
+        .img-col { flex: 1; }
+
+        .img-col img {
+            width: 100%;
+            border-radius: 6px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            border: 1px solid #ddd;
+        }
+
+        .section-header {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        /* 3. Benefit List */
+        .benefit-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .benefit-list li {
+            margin-bottom: 15px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.05rem;
+            color: #444;
+        }
+
+        .benefit-list li::before {
+            content: "✓";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+
+        /* 4. Tech Spec Table */
+        .tech-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 30px;
+            background: #fff;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .tech-table th, .tech-table td {
+            padding: 15px 20px;
+            border-bottom: 1px solid #eee;
+            text-align: left;
+        }
+
+        .tech-table th {
+            background-color: var(--primary);
+            color: #fff;
+            width: 40%;
+        }
+
+        .tech-table td {
+            color: #555;
+            font-weight: 600;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -18,13 +126,7 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
-
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-
+            <button class="mobile-menu-btn" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -55,37 +157,110 @@
         </nav>
     </header>
 
-    <section class="page-title">
-        <h1>PIT Hardware (HFMI)</h1>
+    <section class="pit-hero">
+        <div class="container">
+            <h1>PIT (HFMI) Technology</h1>
+            <p>
+                Pneumatic Impact Treatment (PIT) is a High Frequency Mechanical Impact (HFMI) method used to significantly extend the fatigue life of welded structures.
+            </p>
+        </div>
     </section>
 
-    <div class="container">
-        
-        <div class="feature-card">
-            <div class="feature-content">
-                <h3>Pneumatic Impact Treatment (PIT)</h3>
-                <span class="subtitle">Portable & Powerful</span>
-                <p>The PIT system consists of a control unit and a handheld impact tool. It is designed for mobility, allowing engineers to perform treatments directly on-site, even in difficult-to-reach areas.</p>
-                
-                <ul class="feature-list" style="margin-top: 20px; list-style-position: inside;">
-                    <li><strong>Operating Frequency:</strong> ~90 Hz</li>
-                    <li><strong>Power Supply:</strong> Standard Compressed Air (6 bar)</li>
-                    <li><strong>Application Speed:</strong> Approx. 30 cm/min</li>
-                    <li><strong>Pin Radius:</strong> Optimized for weld geometry (2mm - 4mm)</li>
+    <div class="content-section">
+        <div class="container split-layout">
+            <div class="text-col">
+                <h2 class="section-header">How It Works</h2>
+                <p style="color: #666; line-height: 1.7; margin-bottom: 20px;">
+                    The PIT method uses hardened steel pins driven by compressed air at high frequency (90 Hz) to hammer the weld toe.  This process achieves two critical engineering improvements simultaneously:
+                </p>
+                <ul class="benefit-list">
+                    <li><strong>Plastic Deformation:</strong> It modifies the weld toe geometry, rounding out sharp notches and reducing stress concentration factors.</li>
+                    <li><strong>Compressive Residual Stress:</strong> It introduces deep compressive stresses into the metal surface, which prevents crack initiation and propagation.</li>
                 </ul>
             </div>
-            <div class="feature-image">
-                <img src="pit.png" alt="PIT Hardware Tool Kit"> 
+            <div class="img-col">
+                <img src="pit_application.jpg" alt="HFMI Application on Weld" onerror="this.src='https://via.placeholder.com/600x400?text=HFMI+Weld+Treatment'">
             </div>
         </div>
+    </div>
 
-        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
-            <h2>Request a Technical Demo</h2>
-            <p>Interested in seeing how PIT can extend the lifespan of your assets? Contact us for a technical demonstration or to rent the equipment.</p>
-            <br>
-            <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px;">Inquire About PIT</a>
+    <div class="content-section" style="background-color: #fcfcfc;">
+        <div class="container split-layout">
+            <div class="img-col">
+                
+                <img src="pit_tool.jpg" alt="PIT Hardware Kit" onerror="this.src='https://via.placeholder.com/600x400?text=PIT+Hardware+Kit'">
+            </div>
+            <div class="text-col">
+                <h2 class="section-header">Technical Specifications</h2>
+                <p style="color: #666;">
+                    The PIT system is designed for mobility and durability. It requires only standard compressed air, making it ideal for on-site offshore, bridge, and heavy industry applications.
+                </p>
+
+                <table class="tech-table">
+                    <tr>
+                        <th>Impact Frequency</th>
+                        <td>90 Hz</td>
+                    </tr>
+                    <tr>
+                        <th>Air Pressure Required</th>
+                        <td>6 - 8 bar</td>
+                    </tr>
+                    <tr>
+                        <th>Treatment Speed</th>
+                        <td>Approx. 30 cm / minute</td>
+                    </tr>
+                    <tr>
+                        <th>Pin Radius</th>
+                        <td>2mm, 3mm, or 4mm (Exchangeable)</td>
+                    </tr>
+                    <tr>
+                        <th>Vibration Emission</th>
+                        <td>Low (Damped Handle System)</td>
+                    </tr>
+                </table>
+            </div>
         </div>
+    </div>
 
+    <div class="content-section">
+        <div class="container">
+            <h2 class="section-header" style="text-align: center; border: none; padding: 0;">Why Use PIT?</h2>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; margin-top: 40px;">
+                
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 10px;">Life Extension</h3>
+                    <p style="color: #666; line-height: 1.6;">
+                        Can extend the fatigue life of welded joints by a factor of 4x to 10x depending on the load spectrum.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 10px;">Highest FAT Class</h3>
+                    <p style="color: #666; line-height: 1.6;">
+                        Allows engineers to design utilizing higher fatigue classes (FAT) according to IIW and DNV guidelines.
+                    </p>
+                </div>
+
+                <div>
+                    <h3 style="color: var(--primary); margin-bottom: 10px;">Stress Corrosion</h3>
+                    <p style="color: #666; line-height: 1.6;">
+                        Prevent Stress Corrosion Cracking (SCC) by neutralizing tensile stresses at the surface.
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 60px; background: #fff;">
+            <h2 style="color: var(--primary);">Equipment Rental & Services</h2>
+            <p style="max-width: 700px; margin: 10px auto 25px auto; font-size: 1.05rem;">
+                We offer PIT equipment rental, pin supplies, and on-site treatment services.
+            </p>
+            <a href="contact.html" class="submit-btn" style="display: inline-block; width: auto; padding: 15px 40px;">Request Quote</a>
+        </div>
     </div>
 
     <footer>
@@ -93,7 +268,6 @@
     </footer>
 
     <button id="backToTop" title="Go to top">↑</button>
-
     <script src="script.js"></script>
 
 </body>

@@ -3,119 +3,142 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENGINEERING CONSULTING | SYNTEGRIS</title>
+    <title>SERVICES | SYNTEGRIS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
     <style>
-        /* === INTERNAL STYLES FOR CONSULTANT PAGE === */
+        /* === NEW SERVICE LAYOUT (VOLTAIRE STYLE) === */
         
-        /* Service Grid */
-        .consulting-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin-bottom: 80px;
+        .service-section {
+            padding: 40px 0;
         }
 
-        .consulting-item {
-            background: #fff;
-            padding: 40px 30px;
-            border-top: 4px solid var(--primary); /* distinct top border */
-            border-radius: 4px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        .service-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            margin-bottom: 80px; /* Space between services */
         }
 
-        .consulting-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .consulting-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            display: block;
-            color: var(--accent);
-        }
-
-        /* === NEW WORKFLOW SECTION STYLES === */
-        .workflow-wrapper {
-            position: relative;
-            padding: 20px 0;
-        }
-
-        /* The connecting line behind the steps (Desktop only) */
-        .workflow-line {
-            position: absolute;
-            top: 40px;
-            left: 10%;
-            right: 10%;
-            height: 2px;
-            background: #e0e0e0;
-            z-index: 0;
-            display: none; /* Hidden on mobile */
-        }
-
-        @media (min-width: 900px) {
-            .workflow-line { display: block; }
-        }
-
-        .workflow-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
-            position: relative;
-            z-index: 1;
-        }
-
-        @media (min-width: 900px) {
-            .workflow-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 20px;
+        /* Responsive: Stack on mobile */
+        @media (max-width: 900px) {
+            .service-row {
+                flex-direction: column;
+                gap: 30px;
+            }
+            /* Reorder mobile: Image first, then text */
+            .service-row.reverse {
+                flex-direction: column; 
             }
         }
 
-        .process-step {
-            background: #fff;
-            padding: 30px 20px;
-            text-align: center;
-            border: 1px solid #eee;
+        .service-info {
+            flex: 1;
+            position: relative;
+        }
+
+        .service-img-box {
+            flex: 1;
+            width: 100%;
+        }
+
+        .service-img-box img {
+            width: 100%;
             border-radius: 8px;
-            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            object-fit: cover;
+            height: 350px; /* Enforce uniform height */
         }
 
-        .process-step:hover {
-            border-color: var(--accent);
-            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+        .service-img-box img:hover {
+            transform: scale(1.02);
         }
 
-        .process-number {
-            display: inline-flex;
-            justify-content: center;
-            align-items: center;
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: var(--white);
-            border-radius: 50%;
-            font-weight: bold;
-            font-size: 1.2rem;
-            margin-bottom: 20px;
-            border: 4px solid #fff; /* White ring to separate from line */
-            box-shadow: 0 0 0 2px var(--primary); /* Outer ring */
+        /* The Big Number (01, 02...) */
+        .service-number {
+            font-size: 4rem;
+            font-weight: 800;
+            color: rgba(0,0,0,0.05); /* Very subtle watermark style */
+            line-height: 1;
+            position: absolute;
+            top: -40px;
+            left: -20px;
+            z-index: -1;
         }
 
-        .deliverable-tag {
-            display: inline-block;
-            margin-top: 15px;
-            padding: 5px 10px;
-            background: #f0f4ff;
+        .service-title {
             color: var(--primary);
-            font-size: 0.75rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        /* Gold accent line under title */
+        .service-title::after {
+            content: "";
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: var(--accent);
+            margin-top: 10px;
+        }
+
+        .service-desc {
+            color: #555;
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .service-list {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .service-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 10px;
+            color: #444;
+        }
+
+        .service-list li::before {
+            content: "✔";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Button styling for this section */
+        .service-btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            text-decoration: none;
             font-weight: 600;
             border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            transition: all 0.3s;
+        }
+
+        .service-btn:hover {
+            background: var(--primary);
+            color: #fff;
+        }
+        
+        /* Zig-Zag Logic: Flip the order for "reverse" rows */
+        .service-row.reverse {
+            flex-direction: row-reverse;
+        }
+        
+        @media (max-width: 900px) {
+            .service-row.reverse {
+                flex-direction: column; /* On mobile, always stack normally */
+            }
         }
     </style>
 </head>
@@ -150,7 +173,7 @@
                             </ul>
                         </li>
                         <li class="nested-dropdown">
-                            <a href="javascript:void(0)" class="parent-link">Hardware &raquo;</a>
+                            <a href="javascript:void(0)" class="parent-link">Engineering Equipment &raquo;</a>
                             <ul class="nested-menu">
                                 <li><a href="pit-hardware.html">PIT Equipment</a></li>
                             </ul>
@@ -158,7 +181,7 @@
                     </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="consultant.html" class="active">Consultant</a></li>
+                <li><a href="consultant.html" class="active">Consultation</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -166,134 +189,73 @@
     </header>
 
     <section class="page-title">
-        <h1>Engineering Consultancy</h1>
-        <p style="color: rgba(255,255,255,0.8); margin-top: 10px; font-size: 1.1rem; max-width: 800px; margin-left: auto; margin-right: auto;">
-            Bridging the gap between theoretical simulation and practical industrial application.
-        </p>
+        <h1>Our Consultation</h1>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 10px;">Comprehensive engineering solutions from simulation to physical treatment.</p>
     </section>
 
-    <div class="container">
+    <div class="container service-section">
         
-        <div style="text-align: center; margin-bottom: 60px; max-width: 900px; margin-left: auto; margin-right: auto;">
-            <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 20px;">Strategic Technical Advisory</h2>
-            <p style="color: #555; font-size: 1.05rem;">
-                Syntegris provides high-level engineering consulting for heavy industries. Our expertise lies in validating designs against international codes, predicting manufacturing defects before they occur, and optimizing structural integrity.
-            </p>
-        </div>
-
-        <div class="consulting-grid">
-            
-            <div class="consulting-item">
-                <span class="consulting-icon">📐</span>
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Advanced FEA & Simulation</h3>
-                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
-                    High-fidelity Finite Element Analysis (FEA) to predict structural behavior under complex loading conditions.
+        <div class="service-row reverse">
+            <div class="service-info">
+                <span class="service-number">02.</span>
+                <h3 class="service-title">PIT Treatment consultation</h3>
+                <p class="service-desc">
+                    Pneumatic Impact Treatment (PIT) is a specialized mechanical treatment used to improve the fatigue life of welded components. We provide on-site PIT services to reduce residual stresses and enhance the durability of critical infrastructure.
                 </p>
-                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
-                    <li>Static & Dynamic Stress Analysis</li>
-                    <li>Fatigue Life Prediction</li>
-                    <li>Buckling & Stability Checks</li>
+                <ul class="service-list">
+                    <li>Extend fatigue life by up to 10x</li>
+                    <li>On-site & offshore application</li>
+                    <li>Weld toe stress relief</li>
                 </ul>
+                <a href="pit-hardware.html" class="service-btn">Learn About PIT</a>
             </div>
-
-            <div class="consulting-item">
-                <span class="consulting-icon">🔥</span>
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Heat Treatment Strategy</h3>
-                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
-                    Using DANTE simulation to optimize thermal cycles, controlling hardness, residual stress, and distortion.
-                </p>
-                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
-                    <li>Quenching & Tempering Optimization</li>
-                    <li>Carburizing Profile Prediction</li>
-                    <li>Distortion Mitigation Strategies</li>
-                </ul>
-            </div>
-
-            <div class="consulting-item">
-                <span class="consulting-icon">⚖️</span>
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Code Compliance Verification</h3>
-                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
-                    Ensuring designs meet strict requirements of international engineering standards and certification bodies.
-                </p>
-                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
-                    <li>Eurocode 3 (Steel Structures)</li>
-                    <li>DNV & API (Offshore/Marine)</li>
-                    <li>AISC 360 & ASME</li>
-                </ul>
-            </div>
-
-            <div class="consulting-item">
-                <span class="consulting-icon">⚙️</span>
-                <h3 style="color: var(--primary); margin-bottom: 15px;">Manufacturing & WAAM</h3>
-                <p style="font-size: 0.95rem; color: #666; margin-bottom: 15px;">
-                    Advisory on advanced manufacturing techniques, specifically Wire Arc Additive Manufacturing (WAAM).
-                </p>
-                <ul style="font-size: 0.9rem; padding-left: 20px; color: #555;">
-                    <li>Deposition Path Planning</li>
-                    <li>Thermal Management in 3D Printing</li>
-                    <li>Material Selection & Testing</li>
-                </ul>
-            </div>
-
-        </div>
-
-        <div class="card" style="background: var(--light); border: none; padding: 60px 40px;">
-            <div style="text-align: center; margin-bottom: 50px;">
-                <h2 style="color: var(--primary);">Our Engineering Workflow</h2>
-                <p>A rigorous, systematic approach to solving complex technical challenges.</p>
-            </div>
-            
-            <div class="workflow-wrapper">
-                <div class="workflow-line"></div>
-
-                <div class="workflow-grid">
-                    
-                    <div class="process-step">
-                        <span class="process-number">01</span>
-                        <h4 style="margin-bottom: 10px;">Problem Definition</h4>
-                        <p style="font-size: 0.9rem; color: #666;">
-                            We define boundary conditions, acquire operational data, and set project objectives.
-                        </p>
-                        <span class="deliverable-tag">Output: Scope of Work</span>
-                    </div>
-
-                    <div class="process-step">
-                        <span class="process-number">02</span>
-                        <h4 style="margin-bottom: 10px;">Numerical Simulation</h4>
-                        <p style="font-size: 0.9rem; color: #666;">
-                            Execution of high-fidelity analysis (FEA/CFD) using industry-leading solvers to replicate physics.
-                        </p>
-                        <span class="deliverable-tag">Output: Preliminary Data</span>
-                    </div>
-
-                    <div class="process-step">
-                        <span class="process-number">03</span>
-                        <h4 style="margin-bottom: 10px;">Optimization</h4>
-                        <p style="font-size: 0.9rem; color: #666;">
-                            Iterative design refinement to reduce weight, improve fatigue life, or mitigate distortion.
-                        </p>
-                        <span class="deliverable-tag">Output: Design Proposal</span>
-                    </div>
-
-                    <div class="process-step">
-                        <span class="process-number">04</span>
-                        <h4 style="margin-bottom: 10px;">Validation & Report</h4>
-                        <p style="font-size: 0.9rem; color: #666;">
-                            Final verification against International Codes (DNV/ISO) and certification of results.
-                        </p>
-                        <span class="deliverable-tag">Output: Certified Report</span>
-                    </div>
-
-                </div>
+            <div class="service-img-box">
+                <img src="service-pit.jpg" alt="PIT Treatment on site" onerror="this.src='https://via.placeholder.com/600x400?text=PIT+Image'">
             </div>
         </div>
 
-        <div class="card" style="background: var(--primary); color: white; text-align: center; margin-top: 60px; border-top: 4px solid var(--accent);">
-            <h2 style="color: var(--accent);">Start a Technical Consultation</h2>
-            <p style="margin-bottom: 25px; opacity: 0.9;">
-                Discuss your engineering challenges with our lead consultants. We provide an initial feasibility assessment for all new projects.
-            </p>
-            <a href="contact.html" class="submit-btn" style="background-color: var(--white); color: var(--primary); border: none;">Schedule Meeting</a>
+        <div class="service-row">
+            <div class="service-info">
+                <span class="service-number">03.</span>
+                <h3 class="service-title">FEA Simulation Support</h3>
+                <p class="service-desc">
+                    Our team provides technical support for Finite Element Analysis (FEA). We assist in mesh generation, boundary condition setup, and post-processing results to ensure your simulations accurately reflect real-world physics.
+                </p>
+                <ul class="service-list">
+                    <li>Static & Dynamic Analysis</li>
+                    <li>Mesh convergence studies</li>
+                    <li>Failure root cause analysis</li>
+                </ul>
+                <a href="consultant.html" class="service-btn">Consulting Team</a>
+            </div>
+            <div class="service-img-box">
+                <img src="service-fea.jpg" alt="FEA Mesh Model" onerror="this.src='https://via.placeholder.com/600x400?text=FEA+Image'">
+            </div>
+        </div>
+
+        <div class="service-row reverse">
+            <div class="service-info">
+                <span class="service-number">04.</span>
+                <h3 class="service-title">WAAM Technical Support</h3>
+                <p class="service-desc">
+                    We support the technical execution of <strong>Wire Arc Additive Manufacturing (WAAM)</strong> projects. This includes path planning optimization, deposition strategy, and metallurgical testing to ensure 3D-printed metal parts meet industrial quality standards.
+                </p>
+                <ul class="service-list">
+                    <li>Deposition path planning</li>
+                    <li>Metallurgical validation</li>
+                    <li>Process parameter optimization</li>
+                </ul>
+                <a href="contact.html" class="service-btn">Get Support</a>
+            </div>
+            <div class="service-img-box">
+                <img src="service-waam.jpg" alt="WAAM 3D Printing Process" onerror="this.src='https://via.placeholder.com/600x400?text=WAAM+Image'">
+            </div>
+        </div>
+
+        <div class="card" style="text-align: center; margin-top: 60px; background: var(--primary); color: white;">
+            <h2 style="color: var(--accent);">Need a Customized Solution?</h2>
+            <p style="opacity: 0.9; text-align: center; margin-bottom: 25px;">Our engineers are ready to tailor a service package for your specific project requirements.</p>
+            <a href="contact.html" class="submit-btn" style="background: white; color: var(--primary); border: none;">Contact Us</a>
         </div>
 
     </div>

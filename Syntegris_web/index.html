@@ -7,19 +7,118 @@
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
     <style>
-        /* === FORCE LOGOS TO BE COLORED === */
-        .logo-strip img {
-            filter: none !important;       /* Removes the gray filter */
-            -webkit-filter: none !important; 
-            opacity: 1 !important;         /* Ensures they are fully visible */
-            mix-blend-mode: normal !important;
+        /* === NEW 3DS-STYLE INDUSTRIAL CARDS === */
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px; /* Tighter gap like industrial tiles */
+            margin-top: -50px; /* Pulls grid up to overlap hero slightly (modern look) */
+            position: relative;
+            z-index: 10;
+        }
+
+        .industry-card {
+            position: relative;
+            height: 350px; /* Tall, substantial cards */
+            background-color: #0b1324; /* Fallback color */
+            background-size: cover;
+            background-position: center;
+            border-radius: 4px; /* Sharp, industrial corners (or slightly rounded) */
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end; /* Text at bottom */
+        }
+
+        /* Hover Effect: Zoom & Lift */
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.4);
+        }
+
+        /* The Dark Gradient Overlay (Crucial for text readability) */
+        .industry-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.8) 100%);
+            transition: background 0.3s;
+        }
+
+        .industry-card:hover::before {
+            background: linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.9) 100%);
+        }
+
+        /* Card Content */
+        .card-content {
+            position: relative;
+            z-index: 2;
+            padding: 30px;
+            color: white;
+        }
+
+        .card-content h3 {
+            font-size: 1.6rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 10px;
+            border-left: 4px solid var(--accent); /* Gold accent line */
+            padding-left: 15px;
+            line-height: 1.1;
+        }
+
+        .card-content p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 20px;
+            font-weight: 300;
+            display: none; /* Hide description by default, show on hover? Optional. */
         }
         
-        /* Optional: Add a small hover zoom effect instead of color change */
-        .logo-strip img:hover {
-            transform: scale(1.1);
-            transition: transform 0.3s ease;
+        /* Show description on desktop by default for clarity */
+        @media (min-width: 900px) {
+            .card-content p { display: block; }
         }
+
+        .card-arrow {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-arrow span {
+            transition: transform 0.3s;
+        }
+
+        .industry-card:hover .card-arrow span {
+            transform: translateX(5px);
+        }
+
+        /* === FIX FOR PARTNER LOGOS === */
+        .logo-strip img {
+            filter: none !important;
+            opacity: 1 !important;
+            mix-blend-mode: normal !important;
+            height: 60px; /* Enforce height */
+            width: auto;
+            margin: 0 20px;
+            transition: transform 0.3s;
+        }
+        .logo-strip img:hover { transform: scale(1.1); }
+
     </style>
 </head>
 <body>
@@ -35,9 +134,7 @@
             </a>
 
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
 
             <ul class="nav-links">
@@ -55,7 +152,7 @@
                             </ul>
                         </li>
                         <li class="nested-dropdown">
-                            <a href="javascript:void(0)" class="parent-link">Hardware &raquo;</a>
+                            <a href="javascript:void(0)" class="parent-link">Engineering Equipment &raquo;</a>
                             <ul class="nested-menu">
                                 <li><a href="pit-hardware.html">PIT Equipment</a></li>
                             </ul>
@@ -63,7 +160,7 @@
                     </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="consultant.html">Consultant</a></li>
+                <li><a href="consultant.html">Consultation</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
@@ -90,31 +187,35 @@
         </div>
     </section>
 
-    <div class="container">
+    <div class="container" style="position: relative; z-index: 10;">
         
         <div class="features-grid">
-            <div class="feature-box">
-                <span class="feature-icon">💻</span>
-                <h3>Simulation Software</h3>
-                <p>Authorized distributor for SDC Verifier, DANTE, and Stampack. Validate designs before production begins.</p>
-                <a href="products.html" style="color: var(--primary); font-weight: 700; text-decoration: none;">View Catalog &rarr;</a>
-            </div>
 
-            <div class="feature-box">
-                <span class="feature-icon">⚙️</span>
-                <h3>Engineering Consulting</h3>
-                <p>Expert guidance on Eurocode compliance, FEA mesh generation, and welding distortion control.</p>
-                <a href="consultant.html" style="color: var(--primary); font-weight: 700; text-decoration: none;">Meet Experts &rarr;</a>
-            </div>
+            <a href="products.html" class="industry-card" style="background-image: url('industry-sim.jpg'), linear-gradient(#333, #333);">
+                <div class="card-content">
+                    <h3>Simulation<br>Software</h3>
+                    <p>Validate designs with SDC Verifier, Dante, and Stampack.</p>
+                    <div class="card-arrow">View Catalog <span>&rarr;</span></div>
+                </div>
+            </a>
 
-            <div class="feature-box">
-                <span class="feature-icon">🔨</span>
-                <h3>PIT Treatments</h3>
-                <p>Extend the fatigue life of your welded structures by up to 10x with Pneumatic Impact Treatment.</p>
-                <a href="pit-hardware.html" style="color: var(--primary); font-weight: 700; text-decoration: none;">Learn About PIT &rarr;</a>
-            </div>
+            <a href="consultant.html" class="industry-card" style="background-image: url('industry-consult.jpg'), linear-gradient(#333, #333);">
+                <div class="card-content">
+                    <h3>Engineering<br>Consultation</h3>
+                    <p>Eurocode compliance, FEA mesh generation, and welding analysis.</p>
+                    <div class="card-arrow">Meet Experts <span>&rarr;</span></div>
+                </div>
+            </a>
+
+            <a href="pit-hardware.html" class="industry-card" style="background-image: url('industry-pit.jpg'), linear-gradient(#333, #333);">
+                <div class="card-content">
+                    <h3>PIT<br>Treatments</h3>
+                    <p>Life extension for welded structures via HFMI technology.</p>
+                    <div class="card-arrow">Learn More <span>&rarr;</span></div>
+                </div>
+            </a>
+
         </div>
-
         <div class="card" style="margin-top: 80px; text-align: center; border: none; box-shadow: none;">
             <h2 style="color: var(--primary); font-size: 2rem; margin-bottom: 20px;">The Bridge Between Theory & Application</h2>
             <p style="max-width: 800px; margin: 0 auto; font-size: 1.1rem; color: #555;">
@@ -146,7 +247,7 @@
     </div>
 
     <div class="container">
-        <div class="category-header"style="text-align: center;">
+        <div class="category-header" style="text-align: center;">
             <h2>Our Technology Partners</h2>
             <p>We work with the world's best simulation developers and equipment manufacturers.</p>
         </div>

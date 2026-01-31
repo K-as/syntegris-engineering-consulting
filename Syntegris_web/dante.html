@@ -3,9 +3,121 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DANTE SOLUTIONS | SYNTEGRIS</title>
+    <title>DANTE PRODUCTS | SYNTEGRIS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === SIMPLIFIED DANTE LAYOUT === */
+        
+        /* 1. Clean Hero */
+        .simple-hero {
+            background-color: #0b1324;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .simple-hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .simple-hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* 2. Text-Heavy Sections */
+        .content-section {
+            padding: 80px 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .split-layout {
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        /* Flip order for alternating sections */
+        .split-layout.reverse {
+            flex-direction: row-reverse;
+        }
+
+        @media (max-width: 900px) {
+            .split-layout, .split-layout.reverse {
+                flex-direction: column;
+                gap: 40px;
+            }
+        }
+
+        .text-col {
+            flex: 1;
+        }
+
+        .img-col {
+            flex: 1;
+        }
+
+        .img-col img {
+            width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        }
+
+        .section-title {
+            color: var(--primary);
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            border-left: 5px solid var(--accent);
+            padding-left: 20px;
+        }
+
+        .section-desc {
+            font-size: 1.05rem;
+            color: #555;
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        /* Clean List Styles */
+        .product-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .product-list li {
+            margin-bottom: 20px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .product-list li::before {
+            content: "➤";
+            color: var(--accent);
+            position: absolute;
+            left: 0;
+            font-size: 0.9rem;
+            top: 4px;
+        }
+
+        .prod-name {
+            font-weight: 700;
+            color: #003366;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .prod-detail {
+            font-size: 0.95rem;
+            color: #666;
+        }
+
+    </style>
 </head>
 <body>
 
@@ -18,9 +130,7 @@
                     <span class="brand-sub">ENGINEERING & CONSULTING</span>
                 </div>
             </a>
-            <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span><span></span><span></span>
-            </button>
+            <button class="mobile-menu-btn" aria-label="Toggle Menu"><span></span><span></span><span></span></button>
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
@@ -44,43 +154,123 @@
                     </ul>
                 </li>
                 <li><a href="services.html">Services</a></li>
-                <li><a href="consultant.html">Consultant</a></li>
+                <li><a href="consultant.html">Consultation</a></li>
                 <li><a href="news.html">News</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="page-title">
-        <h1>DANTE Solutions</h1>
+    <section class="simple-hero">
+        <div class="container">
+            <h1>DANTE Solutions</h1>
+            <p>
+                The industry standard for heat treatment simulation. 
+                Improve part performance and reduce scrap by predicting distortion, 
+                residual stress, and metallurgical phases before production.
+            </p>
+        </div>
     </section>
 
-    <div class="container">
-        <div class="card">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <img src="DANTE.png" alt="DANTE Logo" style="max-height: 80px;">
+    <div class="content-section">
+        <div class="container split-layout">
+            <div class="text-col">
+                <h2 class="section-title">DANTE FEA Solver</h2>
+                <p class="section-desc">
+                    The core engine of the DANTE system. This Finite Element Analysis (FEA) solver links thermal, mechanical, and metallurgical models to simulate the entire heat treatment cycle.
+                </p>
+                <ul class="product-list">
+                    <li>
+                        <span class="prod-name">Accurate Distortion Prediction</span>
+                        <span class="prod-detail">Minimize machining allowance and optimize fixture design.</span>
+                    </li>
+                    <li>
+                        <span class="prod-name">Residual Stress Analysis</span>
+                        <span class="prod-detail">Identify cracking risks and improve fatigue life performance.</span>
+                    </li>
+                    <li>
+                        <span class="prod-name">Phase Transformation</span>
+                        <span class="prod-detail">Track Austenite, Ferrite, Pearlite, Bainite, and Martensite formation.</span>
+                    </li>
+                </ul>
             </div>
-
-            <h2>Heat Treatment Simulation Software</h2>
-            <p>DANTE is the premier software for simulating heat treatment processes. It allows engineers to predict residual stress, distortion, and hardness in steel parts.</p>
-            <p>Understanding these factors is crucial for preventing cracking during quenching and ensuring the final component meets design specifications.</p>
-            
-            <ul class="feature-list" style="margin-top: 20px; list-style-position: inside;">
-                <li><strong>Phase Transformation:</strong> Accurate prediction of metallurgical phases.</li>
-                <li><strong>Residual Stress:</strong> Identify areas of high stress.</li>
-                <li><strong>Distortion Prediction:</strong> Minimize machining allowances.</li>
-            </ul>
+            <div class="img-col">
+                <img src="dante_main.webp" alt="Dante FEA Simulation Result" onerror="this.src='https://via.placeholder.com/600x400?text=DANTE+FEA+Simulation'">
+            </div>
         </div>
+    </div>
 
-        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
-            <h2 style="color: var(--primary);">Predict Distortion Before It Happens</h2>
-            <p style="max-width: 700px; margin: 10px auto 25px auto;">
-                Get a trial license to predict hardness, residual stress, and part distortion accurately.
+    <div class="content-section" style="background-color: #fcfcfc;">
+        <div class="container split-layout reverse">
+            <div class="text-col">
+                <h2 class="section-title">Process Design & Optimization</h2>
+                <p class="section-desc">
+                    A suite of specialized utilities to define and optimize your heating and carburizing schedules.
+                </p>
+                <ul class="product-list">
+                    <li>
+                        <span class="prod-name">VCarb (Vacuum Carburizing)</span>
+                        <span class="prod-detail">Simulate boost/diffuse schedules to achieve exact carbon profiles.</span>
+                    </li>
+                    <li>
+                        <span class="prod-name">GCarb (Gas Carburizing)</span>
+                        <span class="prod-detail">Model atmosphere potential interaction with steel surfaces.</span>
+                    </li>
+                    <li>
+                        <span class="prod-name">GNitro (Gas Nitriding)</span>
+                        <span class="prod-detail">Predict nitrogen depth and white layer formation.</span>
+                    </li>
+                    <li>
+                        <span class="prod-name">HTP Sim</span>
+                        <span class="prod-detail">General Heat Treatment Process Simulator for heating/cooling cycles.</span>
+                    </li>
+                </ul>
+            </div>
+            <div class="img-col">
+                <img src="process_sim.jpg" alt="Carburizing Process Graph" onerror="this.src='https://via.placeholder.com/600x400?text=Process+Simulation+Graph'">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <div class="container split-layout">
+            <div class="text-col">
+                <h2 class="section-title">Material Characterization</h2>
+                <p class="section-desc">
+                    Tools to generate material models and fit experimental data for custom alloys.
+                </p>
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px;">
+                    <div>
+                        <h4 style="color:#003366; margin-bottom:10px;">Prediction Tools</h4>
+                        <ul class="product-list">
+                            <li><span class="prod-name">TTT Gen</span> Generate TTT diagrams.</li>
+                            <li><span class="prod-name">CHT Gen</span> Continuous heating models.</li>
+                            <li><span class="prod-name">Jominy Predictor</span> Hardenability curves.</li>
+                            <li><span class="prod-name">Mat Sim</span> Phase visualization.</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 style="color:#003366; margin-bottom:10px;">Data Fitting</h4>
+                        <ul class="product-list">
+                            <li><span class="prod-name">Dilot Fit</span> Fit dilatometry data.</li>
+                            <li><span class="prod-name">Mec Fit</span> Fit mechanical stress-strain data.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="img-col">
+                <img src="material_sim.jpg" alt="TTT Diagram" onerror="this.src='https://via.placeholder.com/600x400?text=Material+Phase+Diagram'">
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 60px; background: #fff;">
+            <h2 style="color: var(--primary);">Optimize Your Heat Treatment</h2>
+            <p style="max-width: 700px; margin: 10px auto 25px auto; font-size: 1.05rem;">
+                Stop relying on trial-and-error. Use DANTE to predict your metallurgical outcomes accurately.
             </p>
-            
-            <a href="https://dante-solutions.com/dante-trial-license/" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; margin-right: 10px;">Request Trial License</a>
-
-            <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; background-color: var(--white); color: var(--primary); border: 2px solid var(--primary);">Consult With Us</a>
+            <a href="contact.html" class="submit-btn" style="display: inline-block; width: auto; padding: 15px 40px;">Contact Our Engineers</a>
         </div>
     </div>
 
@@ -89,7 +279,6 @@
     </footer>
 
     <button id="backToTop" title="Go to top">↑</button>
-
     <script src="script.js"></script>
 
 </body>

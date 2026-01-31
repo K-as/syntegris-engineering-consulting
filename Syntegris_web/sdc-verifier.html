@@ -6,6 +6,109 @@
     <title>SDC VERIFIER | SYNTEGRIS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === NEW SDC PAGE STYLES === */
+        
+        /* Hero Section Background */
+        .page-title {
+            background: linear-gradient(rgba(11, 19, 36, 0.9), rgba(11, 19, 36, 0.8)), url('industry-sim.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* "What You Achieve" Grid */
+        .achievement-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        /* Image-Based Feature Cards (No Icons) */
+        .achieve-card {
+            background: #fff;
+            border-radius: 8px;
+            overflow: hidden; /* Keeps image inside corners */
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-bottom: 3px solid transparent;
+        }
+
+        .achieve-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+            border-bottom-color: var(--accent);
+        }
+
+        .card-img-header {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            background-color: #eee; /* Placeholder color */
+        }
+
+        .achieve-content {
+            padding: 30px;
+        }
+
+        .achieve-content h3 {
+            color: var(--primary);
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .achieve-content p {
+            font-size: 0.95rem;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        /* Engineering Standards Section */
+        .standards-section {
+            background-color: #f4f6f9;
+            padding: 60px 40px;
+            border-radius: 12px;
+            margin-bottom: 60px;
+        }
+
+        .standards-list-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .std-category h4 {
+            color: var(--primary);
+            border-bottom: 2px solid #ddd;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+
+        .std-category ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .std-category ul li {
+            margin-bottom: 8px;
+            color: #555;
+            font-size: 0.95rem;
+            position: relative;
+            padding-left: 15px;
+        }
+
+        .std-category ul li::before {
+            content: "•";
+            color: var(--accent);
+            font-weight: bold;
+            position: absolute;
+            left: 0;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,15 +123,12 @@
             </a>
 
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                
                 <li class="dropdown">
                     <a href="products.html" class="dropbtn active">Products</a>
                     <ul class="dropdown-menu">
@@ -41,14 +141,13 @@
                             </ul>
                         </li>
                         <li class="nested-dropdown">
-                            <a href="javascript:void(0)" class="parent-link">Hardware &raquo;</a>
+                            <a href="javascript:void(0)" class="parent-link">Engineering Equipment &raquo;</a>
                             <ul class="nested-menu">
                                 <li><a href="pit-hardware.html">PIT Equipment</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-
                 <li><a href="services.html">Services</a></li>
                 <li><a href="consultant.html">Consultant</a></li>
                 <li><a href="news.html">News</a></li>
@@ -59,39 +158,131 @@
 
     <section class="page-title">
         <h1>SDC Verifier</h1>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 10px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            The complete standard verification solution for Ansys, Femap, and Simcenter 3D.
+        </p>
     </section>
 
     <div class="container">
-        <div class="card">
-            <div style="text-align: center; margin-bottom: 30px;">
-                <img src="SDC.png" alt="SDC Verifier Logo" style="max-height: 80px;">
+        
+        <div style="text-align: center; margin-bottom: 60px;">
+            <img src="SDC.png" alt="SDC Verifier Logo" style="max-height: 100px; margin-bottom: 25px;">
+            <h2 style="color: var(--primary); font-size: 2.2rem; margin-bottom: 15px;">Build with Confidence, Validate with Ease</h2>
+            <p style="max-width: 800px; margin: 0 auto; color: #555; font-size: 1.1rem; line-height: 1.6;">
+                SDC Verifier transforms the tedious process of manual code checking into an automated, precise workflow. It empowers structural engineers to verify designs against 50+ international codes instantly.
+            </p>
+        </div>
+        
+        
+        <div class="category-header" style="text-align: center; margin-bottom: 40px;">
+            <h2>What You’ll Achieve with SDC Verifier</h2>
+            <p>A unified platform for calculation, verification, and reporting.</p>
+        </div>
+
+        <div class="achievement-grid">
+            
+            <div class="achieve-card">
+                <img src="sdc-checks.jpg" alt="Comprehensive Design Checks" class="card-img-header" onerror="this.src='https://via.placeholder.com/400x200?text=Design+Checks'">
+                <div class="achieve-content">
+                    <h3>Comprehensive Design Checks</h3>
+                    <p>Perform complex bolt, fatigue, buckling, and strength checks for diverse project requirements in a single interface.</p>
+                </div>
             </div>
 
-            <h2>Structural Code Checking Software</h2>
-            <p>SDC Verifier is an advanced engineering software tailored for structural verification according to industrial standards. It works as a powerful extension for Ansys, Femap, and Simcenter 3D.</p>
-            
-            <ul class="feature-list" style="margin-top: 20px;">
-                <li>Full compliance with Eurocode 3, AISC 360, API 2A RP, DNV, and Norsok.</li>
-                <li>Automated recognition of joints, beam members, and welds.</li>
-                <li>Fatigue calculations for welded structures.</li>
-                <li>Comprehensive reporting tools that save up to 70% of engineering time.</li>
-            </ul>
-        </div>
-    </div>
+            <div class="achieve-card">
+                <img src="sdc-standards.jpg" alt="Effortless Standards Verification" class="card-img-header" onerror="this.src='https://via.placeholder.com/400x200?text=Standards+Verification'">
+                <div class="achieve-content">
+                    <h3>Effortless Standards Verification</h3>
+                    <p>Validate models against 50+ codes (Eurocode, AISC, API, DNV) with automated processes that save hours of manual cross-referencing.</p>
+                </div>
+            </div>
 
-    <div class="container">
-        <div class="card" style="text-align: center; border-top: 4px solid var(--accent); margin-top: 40px;">
-            <h2 style="color: var(--primary);">Optimize Your Structural Verification</h2>
-            <p style="max-width: 700px; margin: 10px auto 25px auto;">
-                Stop manually checking spreadsheets against Eurocode, AISC, or DNV. 
-                Download the <strong>trial version</strong> directly from the developer or contact us for local Malaysian support.
-            </p>
-            
-            <a href="https://sdcverifier.com/downloads/" target="_blank" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; margin-right: 10px;">Get Free Trial</a>
+            <div class="achieve-card">
+                <img src="sdc-automation.jpg" alt="Time-Saving Automation" class="card-img-header" onerror="this.src='https://via.placeholder.com/400x200?text=Automation'">
+                <div class="achieve-content">
+                    <h3>Time-Saving Automation</h3>
+                    <p>Reduce engineering effort by up to 80% with automated tasks for structural recognition, calculation, and full report generation.</p>
+                </div>
+            </div>
 
-            <a href="contact.html" class="submit-btn" style="text-decoration: none; display: inline-block; width: auto; padding: 15px 40px; background-color: var(--white); color: var(--primary); border: 2px solid var(--primary);">Contact Support</a>
+            <div class="achieve-card">
+                <img src="sdc-fea.jpg" alt="FEA Analysis" class="card-img-header" onerror="this.src='https://via.placeholder.com/400x200?text=FEA+Analysis'">
+                <div class="achieve-content">
+                    <h3>FEA Analysis & Simulations</h3>
+                    <p>Leverage the industry-standard Nastran solver for accurate simulations and failure predictions directly within your workflow.</p>
+                </div>
+            </div>
+
+            <div class="achieve-card">
+                <img src="sdc-cad.jpg" alt="CAD to FEA" class="card-img-header" onerror="this.src='https://via.placeholder.com/400x200?text=CAD+to+FEA'">
+                <div class="achieve-content">
+                    <h3>CAD-to-FEA Verification</h3>
+                    <p>Verify designs using the same CAD-based FEA model—no re-modelling required. Ensure consistency between design and analysis.</p>
+                </div>
+            </div>
+
+            <div class="achieve-card">
+                <img src="sdc-result.jpg" alt="Proven Results" class="card-img-header" onerror="this.src='https://via.placeholder.com/400x200?text=Proven+Results'">
+                <div class="achieve-content">
+                    <h3>Proven Results</h3>
+                    <p>Generate calculation reports that are trusted by major certification bodies (DNV, Bureau Veritas) and leading engineering teams worldwide.</p>
+                </div>
+            </div>
+
         </div>
-    </div>
+
+        <div class="standards-section">
+            <div style="text-align: center; margin-bottom: 30px;">
+                <h2 style="color: var(--primary);">Engineering Standards</h2>
+                <p>SDC Verifier supports a vast library of international codes.</p>
+            </div>
+
+            <div class="standards-list-container">
+                
+                <div class="std-category">
+                    <h4>European Codes</h4>
+                    <ul>
+                        <li>Eurocode 3 (Steel)</li>
+                        <li>Eurocode 9 (Aluminium)</li>
+                        <li>F.E.M. 1.001 (Cranes)</li>
+                        <li>DIN Standards</li>
+                        <li>British Standards (BS)</li>
+                    </ul>
+                </div>
+
+                <div class="std-category">
+                    <h4>American Codes</h4>
+                    <ul>
+                        <li>AISC 360-10 (Buildings)</li>
+                        <li>API 2A RP (Offshore)</li>
+                        <li>ASME VIII Div 2 (Pressure Vessels)</li>
+                        <li>ABS Standards</li>
+                    </ul>
+                </div>
+
+                <div class="std-category">
+                    <h4>Offshore & Maritime</h4>
+                    <ul>
+                        <li>DNV-RP-C203 (Fatigue)</li>
+                        <li>DNV-OS-C101</li>
+                        <li>Norsok N-004</li>
+                        <li>Lloyd's Register (LR)</li>
+                        <li>Bureau Veritas (BV)</li>
+                    </ul>
+                </div>
+
+                <div class="std-category">
+                    <h4>Other International</h4>
+                    <ul>
+                        <li>ISO 19902</li>
+                        <li>Australian Standards (AS)</li>
+                        <li>AIJ (Japan)</li>
+                        <li>FKM Standard</li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
 
     <footer>
         <p>&copy; 2026 SYNTEGRIS ENGINEERING & CONSULTING.</p>

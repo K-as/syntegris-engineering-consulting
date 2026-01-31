@@ -6,6 +6,121 @@
     <title>Company News | SYNTEGRIS</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="haikal1.ico">
+    <style>
+        /* === Internal Styles for News Layout === */
+        .news-container {
+            max-width: 900px;
+            margin: 60px auto;
+            padding: 0 20px;
+        }
+
+        .news-card {
+            background: #fff;
+            border-left: 5px solid var(--accent);
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            border-radius: 4px;
+            transition: transform 0.3s ease;
+        }
+
+        .news-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        .news-date {
+            display: block;
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 10px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .news-card h3 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        .news-media img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            max-height: 400px;
+            object-fit: cover;
+        }
+
+        .news-text {
+            color: #555;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .read-more-btn {
+            background: none;
+            border: none;
+            color: var(--accent);
+            font-weight: bold;
+            cursor: pointer;
+            padding: 0;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+        }
+
+        .read-more-btn:hover {
+            text-decoration: underline;
+        }
+
+        /* === CTA SECTION STYLE === */
+        .cta-box {
+            background: linear-gradient(135deg, var(--primary) 0%, #0b1324 100%);
+            color: #ffffff;
+            text-align: center;
+            padding: 80px 40px;
+            border-radius: 12px;
+            margin: 80px auto 0 auto;
+            max-width: 1000px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(18, 31, 61, 0.3);
+        }
+
+        .cta-box::before {
+            content: "";
+            position: absolute;
+            top: -50px; left: -50px;
+            width: 200px; height: 200px;
+            background: var(--accent); opacity: 0.1;
+            border-radius: 50%;
+        }
+
+        .cta-heading {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: var(--primary);
+            padding: 15px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            margin-top: 25px;
+            transition: transform 0.3s;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            background: #fff;
+        }
+    </style>
 </head>
 <body>
 
@@ -20,15 +135,12 @@
             </a>
 
             <button class="mobile-menu-btn" aria-label="Toggle Menu">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
 
             <ul class="nav-links">
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                
                 <li class="dropdown">
                     <a href="products.html" class="dropbtn">Products</a>
                     <ul class="dropdown-menu">
@@ -41,14 +153,13 @@
                             </ul>
                         </li>
                         <li class="nested-dropdown">
-                            <a href="javascript:void(0)" class="parent-link">Hardware &raquo;</a>
+                            <a href="javascript:void(0)" class="parent-link">Engineering Equipment &raquo;</a>
                             <ul class="nested-menu">
                                 <li><a href="pit-hardware.html">PIT Equipment</a></li>
                             </ul>
                         </li>
                     </ul>
                 </li>
-
                 <li><a href="services.html">Services</a></li>
                 <li><a href="consultant.html">Consultant</a></li>
                 <li><a href="news.html" class="active">News</a></li>
@@ -59,42 +170,56 @@
 
     <section class="page-title">
         <h1>Latest Updates</h1>
+        <p style="color: rgba(255,255,255,0.8); margin-top: 10px;">News and events from the Syntegris team.</p>
     </section>
+
     <div class="news-container">
 
-            <div class="news-card">
-                <span class="news-date">January 26, 2026</span>
-                <h3>Launch of New Simulation Services</h3>
-                <div class="news-media">
-                    <img src="simulation-display.jpg" alt="Simulation Analysis">
-                </div>
-                <p class="news-text">
-                    We are expanding our technical offerings to include high-fidelity welding simulations. 
-                    <span class="full-content" style="display: none;">
-                        <br><br>
-                        Using DANTE and SDC Verifier, we can now predict residual stress and distortion in 
-                        complex assemblies, saving our clients significant time in the prototyping phase.
-                    </span>
-                </p>
-                <button class="read-more-btn" onclick="toggleNews(this)">Read More</button>
+        <div class="news-card">
+            <span class="news-date">January 7, 2026</span>
+            <h3>PIT Equipment Training at UiTM</h3>
+            <div class="news-media">
+                <img src="uitm-training.jpg" alt="PIT Training at UiTM" onerror="this.src='https://via.placeholder.com/800x400?text=UiTM+Training+Session'">
             </div>
-
-            <div class="news-card">
-                <span class="news-date">January 20, 2026</span>
-                <h3>Syntegris Officially Established</h3>
-                <p class="news-text">
-                    We are proud to announce our official launch as a hub for Smart Engineering in Malaysia. 
-                    <span class="full-content" style="display: none;">
-                        <br><br>
-                        We are now open for consultation and software inquiries regarding structural integrity, 
-                        advanced manufacturing, and asset management.
-                    </span>
-                </p>
-                <button class="read-more-btn" onclick="toggleNews(this)">Read More</button>
-            </div>
-
+            <p class="news-text">
+                We successfully conducted a specialized training session on Pneumatic Impact Treatment (PIT) equipment at Universiti Teknologi MARA (UiTM). We were honored to invite <strong>Sara Solutions Sdn Bhd</strong> to participate in this technical workshop.
+                <span class="full-content" style="display: none;">
+                    <br><br>
+                    The session covered the fundamentals of High Frequency Mechanical Impact (HFMI) for extending the fatigue life of welded structures.
+                    <br><br>
+                    <strong>Hands-On Demonstration:</strong><br>
+                    Beyond theory, the session provided a valuable opportunity for participants to try out the PIT equipment themselves. They received direct guidance on how to operate the tool, allowing them to experience the treatment process firsthand and understand the application mechanics in a real-world setting.
+                </span>
+            </p>
+            <button class="read-more-btn" onclick="toggleNews(this)">Read More</button>
         </div>
 
+        <div class="news-card">
+            <span class="news-date">January 1, 2026</span>
+            <h3>Syntegris Officially Established</h3>
+            <p class="news-text">
+                We are proud to announce our official launch as a hub for Smart Engineering in Malaysia. 
+                <span class="full-content" style="display: none;">
+                    <br><br>
+                    We are now open for consultation and software inquiries regarding structural integrity, 
+                    advanced manufacturing, and asset management.
+                </span>
+            </p>
+            <button class="read-more-btn" onclick="toggleNews(this)">Read More</button>
+        </div>
+
+    </div>
+
+    <div class="container" style="padding-bottom: 60px;">
+        <div class="cta-box">
+            <h2 class="cta-heading">
+                Enough Thinking. <span style="color: var(--accent);">Let's Build.</span>
+            </h2>
+            <p style="opacity: 0.9; max-width: 600px; margin: 0 auto;">
+                Whether you need training, equipment, or advanced simulation, we are ready to assist.
+            </p>
+            <a href="contact.html" class="cta-btn">Contact Us</a>
+        </div>
     </div>
 
     <footer>
